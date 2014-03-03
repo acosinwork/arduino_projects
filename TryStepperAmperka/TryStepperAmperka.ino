@@ -1,7 +1,7 @@
 #include <StepperAmperka.h>
 
 //StepperAmperka motor = StepperAmperka(200, 4, 7);
-StepperAmperka motor = StepperAmperka(200, 4, 5, 6, 7);
+StepperAmperka motor = StepperAmperka(200, 4, 5, 6, 7, 2);
 
 void setup()
 {
@@ -18,7 +18,9 @@ void loop()
 {
 
     
-    motor.step(100);
+    motor.step(200);
+    delay(1000);
+        motor.step(-100);
     delay(1000);
     
 //        motor.setSpeed(40);

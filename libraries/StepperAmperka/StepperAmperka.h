@@ -49,8 +49,8 @@
 class StepperAmperka {
   public:
     // constructors:
-    StepperAmperka(int number_of_steps, int motor_pin_1, int motor_pin_2);
-    StepperAmperka(int number_of_steps, int motor_pin_1, int motor_pin_2, int motor_pin_3, int motor_pin_4);
+   // StepperAmperka(int number_of_steps, int motor_pin_1, int motor_pin_2);
+    StepperAmperka(int number_of_steps, int motor_pin_1, int motor_pin_2, int motor_pin_3, int motor_pin_4, int stepType);
 
     // speed setter method:
     void setSpeed(long whatSpeed);
@@ -64,11 +64,11 @@ class StepperAmperka {
   protected:
     void stepMotor(int this_step);
     
-    int direction;        // Direction of rotation
+    bool direction;        // Direction of rotation
     int speed;          // Speed in RPMs
     unsigned long step_delay;    // delay between steps, in ms, based on speed
     int number_of_steps;      // total number of steps this motor can take
-    int pin_count;        // whether you're driving the motor with 2 or 4 pins
+    int stepType;        // whether you're driving the motor with 2 or 4 pins
     int step_number;        // which step the motor is on
     
     // motor pin numbers:
