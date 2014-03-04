@@ -45,12 +45,14 @@
 #ifndef StepperAmperka_h
 #define StepperAmperka_h
 
+enum { WAVE_DRIVE, FULL_STEP, HALF_STEP };
+
 // library interface description
 class StepperAmperka {
   public:
     // constructors:
-   // StepperAmperka(int number_of_steps, int motor_pin_1, int motor_pin_2);
-    StepperAmperka(int number_of_steps, int motor_pin_1, int motor_pin_2, int motor_pin_3, int motor_pin_4, int stepType);
+    StepperAmperka(int number_of_steps);
+    StepperAmperka(int number_of_steps, unsigned char motor_pin_1, unsigned char motor_pin_2, unsigned char motor_pin_3, unsigned char motor_pin_4, unsigned char stepType);
 
     // speed setter method:
     void setSpeed(long whatSpeed);
@@ -68,14 +70,14 @@ class StepperAmperka {
     int speed;          // Speed in RPMs
     unsigned long step_delay;    // delay between steps, in ms, based on speed
     int number_of_steps;      // total number of steps this motor can take
-    int stepType;        // whether you're driving the motor with 2 or 4 pins
-    int step_number;        // which step the motor is on
+    unsigned char stepType;        // whether you're driving the motor with 2 or 4 pins
+    unsigned char step_number;        // which step the motor is on
     
     // motor pin numbers:
-    int motor_pin_1;
-    int motor_pin_2;
-    int motor_pin_3;
-    int motor_pin_4;
+    unsigned char motor_pin_1;
+    unsigned char motor_pin_2;
+    unsigned char motor_pin_3;
+    unsigned char motor_pin_4;
     
     long last_step_time;      // time stamp in ms of when the last step was taken
 };
