@@ -62,7 +62,8 @@ void loop() {
   */
   
   doStep(1, 1, 0, 0);
-  analogWrite(E2, 127);
+  analogWrite(E1, 221); //cos 30
+  analogWrite(E2, 127); //sin 30
   delay(delayTime);
   doStep(1, 1, 1, 1);
   analogWrite(E1, 127);
