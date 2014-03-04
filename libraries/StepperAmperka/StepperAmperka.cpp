@@ -122,7 +122,14 @@ StepperAmperka::StepperAmperka(int number_of_steps, unsigned char motor_pin_1, u
 */
 void StepperAmperka::setSpeed(long whatSpeed)
 {
-  this->step_delay = 60L * 1000L / this->number_of_steps / whatSpeed;
+  if (stepType==HALF_STEP) 
+  {
+    this->step_delay = 60L * 1000L / (this->number_of_steps * 2L) / whatSpeed;
+  }
+  else 
+  {
+    this->step_delay = 60L * 1000L / this->number_of_steps / whatSpeed;
+  }
 }
 
 /*

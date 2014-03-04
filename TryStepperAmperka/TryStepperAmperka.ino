@@ -1,29 +1,29 @@
 #include <StepperAmperka.h>
 
-//StepperAmperka motor = StepperAmperka(200, 4, 7);
-StepperAmperka motor = StepperAmperka(200, 4, 5, 6, 7, 2);
+//Количество шагов на 1 оборот. Характеристика используемого шагового двигателя
+int steps_per_revolution=200;
+
+// Инициализация Motor Shield в двухфазном режиме. Возможные значения: 
+// WAVE_DRIVE, FULL_STEP, HALF_STEP
+StepperAmperka motor = StepperAmperka(steps_per_revolution, 4, 5, 6, 7, FULL_STEP);
 
 void setup()
 {
-/*  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
-  digitalWrite(5, HIGH);
-  digitalWrite(6, HIGH);
-  */
-//  motor.direction=1;
-      motor.setSpeed(40);
+  // Устанавливаем скорость вращения 30 оборотов в минуту.
+  motor.setSpeed(30);
 }
 
 void loop()
 {
+// Один оборот в одну сторону
+  motor.step(200);
 
-    
-    motor.step(200);
-    delay(1000);
-        motor.step(-100);
-    delay(1000);
-    
-//        motor.setSpeed(40);
-        
-            delay(1000);
+// Затем подождём
+  delay(1000);
+
+// Один оборот в другую сторону
+  motor.step(-200);
+
+// И ещё подождём
+  delay(1000);
 }
