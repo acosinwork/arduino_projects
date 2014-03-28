@@ -1,83 +1,66 @@
 /*
-  Stepper.h - - Stepper library for Wiring/Arduino - Version 0.4
+  StepperAmperka.h - Fork of stepper library for Wiring/Arduino to
+        make it compatible out of the box with Amperka Motor Shield
   
   Original library     (0.1) by Tom Igoe.
   Two-wire modifications   (0.2) by Sebastian Gassner
   Combination version   (0.3) by Tom Igoe and David Mellis
   Bug fix for four-wire   (0.4) by Tom Igoe, bug fix from Noah Shibley
+  Half step mode        (0.4a) by Vasily Basalaev
 
-  Drives a unipolar or bipolar stepper motor using  2 wires or 4 wires
-
-  When wiring multiple stepper motors to a microcontroller,
-  you quickly run out of output pins, with each motor requiring 4 connections. 
-
-  By making use of the fact that at any time two of the four motor
-  coils are the inverse  of the other two, the number of
-  control connections can be reduced from 4 to 2. 
-
-  A slightly modified circuit around a Darlington transistor array or an L293 H-bridge
-  connects to only 2 microcontroler pins, inverts the signals received,
-  and delivers the 4 (2 plus 2 inverted ones) output signals required
-  for driving a stepper motor.
-
-  The sequence of control signals for 4 control wires is as follows:
-
-  Step C0 C1 C2 C3
-     1  1  0  1  0
-     2  0  1  1  0
-     3  0  1  0  1
-     4  1  0  0  1
-
-  The sequence of controls signals for 2 control wires is as follows
-  (columns C1 and C2 from above):
-
-  Step C0 C1
-     1  0  1
-     2  1  1
-     3  1  0
-     4  0  0
-
-  The circuits can be found at 
-  http://www.arduino.cc/en/Tutorial/Stepper
 */
+
+#ifndef ARDUINO
+#error "Arduino version not defined"
+#endif
+
+#if ARDUINO >= 100
+#include <Arduino.h>
+#else
+#include <WProgram.h>
+#endif
 
 // ensure this library description is only included once
 #ifndef StepperAmperka_h
 #define StepperAmperka_h
 
-enum { WAVE_DRIVE, FULL_STEP, HALF_STEP };
+enum STEP_TYPE {
+    WAVE_DRIVE,
+    FULL_STEP,
+    HALF_STEP
+};
 
 // library interface description
 class StepperAmperka {
   public:
-    // constructors:
-    StepperAmperka(int number_of_steps);
-    StepperAmperka(int number_of_steps, unsigned char motor_pin_1, unsigned char motor_pin_2, unsigned char motor_pin_3, unsigned char motor_pin_4, unsigned char stepType);
+    // constructor:
+    StepperAmperka(
+        int number_of_steps,
+        uint8_t motor_pin_1 = 4,
+        uint8_t motor_pin_2 = 5,
+        uint8_t motor_pin_3 = 6,
+        uint8_t motor_pin_4 = 7);
 
     // speed setter method:
-    void setSpeed(long whatSpeed);
+    void setSpeed(long revs_per_minute);
 
     // mover method:
-    void step(int number_of_steps);
+    void step(int number_of_steps, uint8_t step_type=FULL_STEP);
 
-    int version(void);
-
-  //private:
   protected:
-    void stepMotor(int this_step);
+    void stepMotor(int this_step, uint8_t step_type);
     
     bool direction;        // Direction of rotation
-    int speed;          // Speed in RPMs
-    unsigned long step_delay;    // delay between steps, in ms, based on speed
+    int speed;             // Speed in RPMs
+    unsigned long step_delay; // delay between steps, in ms, based on speed
     int number_of_steps;      // total number of steps this motor can take
-    unsigned char stepType;        // whether you're driving the motor with 2 or 4 pins
-    unsigned char step_number;        // which step the motor is on
+    int step_number; // which step the motor is on
     
     // motor pin numbers:
-    unsigned char motor_pin_1;
-    unsigned char motor_pin_2;
-    unsigned char motor_pin_3;
-    unsigned char motor_pin_4;
+    uint8_t motor_pin_1;
+    uint8_t motor_pin_2;
+    uint8_t motor_pin_3;
+    uint8_t motor_pin_4;
     
     long last_step_time;      // time stamp in ms of when the last step was taken
 };

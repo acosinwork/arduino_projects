@@ -1,93 +1,39 @@
 /*
-  Stepper.cpp - - Stepper library for Wiring/Arduino - Version 0.4
+  StepperAmperka.cpp - Fork of stepper library for Wiring/Arduino to
+        make it compatible out of the box with Amperka Motor Shield
   
   Original library     (0.1) by Tom Igoe.
   Two-wire modifications   (0.2) by Sebastian Gassner
   Combination version   (0.3) by Tom Igoe and David Mellis
-  Bug fix for four-wire   (0.4) by Tom Igoe, bug fix from Noah Shibley  
+  Bug fix for four-wire   (0.4) by Tom Igoe, bug fix from Noah Shibley
+  Half step mode        (0.4a) by Vasily Basalaev
 
-  Drives a unipolar or bipolar stepper motor using  2 wires or 4 wires
-
-  When wiring multiple stepper motors to a microcontroller,
-  you quickly run out of output pins, with each motor requiring 4 connections. 
-
-  By making use of the fact that at any time two of the four motor
-  coils are the inverse  of the other two, the number of
-  control connections can be reduced from 4 to 2. 
-
-  A slightly modified circuit around a Darlington transistor array or an L293 H-bridge
-  connects to only 2 microcontroler pins, inverts the signals received,
-  and delivers the 4 (2 plus 2 inverted ones) output signals required
-  for driving a stepper motor.
-
-  The sequence of control signals for 4 control wires is as follows:
-
-  Step C0 C1 C2 C3
-     1  1  0  1  0
-     2  0  1  1  0
-     3  0  1  0  1
-     4  1  0  0  1
-
-  The sequence of controls signals for 2 control wires is as follows
-  (columns C1 and C2 from above):
-
-  Step C0 C1
-     1  0  1
-     2  1  1
-     3  1  0
-     4  0  0
-
-  The circuits can be found at 
- 
-http://www.arduino.cc/en/Tutorial/Stepper
- 
- 
  */
 
+#ifndef ARDUINO
+#error "Arduino version not defined"
+#endif
 
-#include "Arduino.h"
+#if ARDUINO >= 100
+#include <Arduino.h>
+#else
+#include <WProgram.h>
+#endif 
+ 
 #include "StepperAmperka.h"
 
-/*
- *   constructor for default configuration
- *   Sets number of steps in motor.
- */
-
- 
-StepperAmperka::StepperAmperka(int number_of_steps)
-{
-  this->step_number = 0;      // which step the motor is on
-  this->speed = 0;        // the motor speed, in revolutions per minute
-  this->direction = 0;      // motor direction
-  this->last_step_time = 0;    // time stamp in ms of the last step taken
-  this->number_of_steps = number_of_steps;    // total number of steps for this motor
-  
-  // Arduino pins for the motor control connection:
-  this->motor_pin_1 = 4;
-  this->motor_pin_2 = 5;
-  this->motor_pin_3 = 6;
-  this->motor_pin_4 = 7;
-
-  // setup the pins on the microcontroller:
-  pinMode(this->motor_pin_1, OUTPUT);
-  pinMode(this->motor_pin_2, OUTPUT);
-  pinMode(this->motor_pin_3, OUTPUT);
-  pinMode(this->motor_pin_4, OUTPUT);
-
-  // pin_count is used by the stepMotor() method:  
-  this->stepType = FULL_STEP;  
-  
-    digitalWrite(this->motor_pin_2, HIGH);
-    digitalWrite(this->motor_pin_3, HIGH);
-
-}
 
 /*
  *   constructor for four-pin version
  *   Sets which wires should control the motor.
  */
 
-StepperAmperka::StepperAmperka(int number_of_steps, unsigned char motor_pin_1, unsigned char motor_pin_2, unsigned char motor_pin_3, unsigned char motor_pin_4, unsigned char stepType)
+StepperAmperka::StepperAmperka(
+        int number_of_steps,
+        unsigned char motor_pin_1,
+        unsigned char motor_pin_2,
+        unsigned char motor_pin_3,
+        unsigned char motor_pin_4)
 {
   this->step_number = 0;      // which step the motor is on
   this->speed = 0;        // the motor speed, in revolutions per minute
@@ -106,50 +52,43 @@ StepperAmperka::StepperAmperka(int number_of_steps, unsigned char motor_pin_1, u
   pinMode(this->motor_pin_2, OUTPUT);
   pinMode(this->motor_pin_3, OUTPUT);
   pinMode(this->motor_pin_4, OUTPUT);
-
-  // pin_count is used by the stepMotor() method:  
-  this->stepType = constrain(stepType, 0, 2);  
-  
-  if (this->stepType==FULL_STEP) {
-    digitalWrite(this->motor_pin_2, HIGH);
-    digitalWrite(this->motor_pin_3, HIGH);
-  }
 }
 
 /*
   Sets the speed in revs per minute
 
 */
-void StepperAmperka::setSpeed(long whatSpeed)
+void StepperAmperka::setSpeed(long revs_per_minute)
 {
-  if (stepType==HALF_STEP) 
-  {
-    this->step_delay = 60L * 1000L / (this->number_of_steps * 2L) / whatSpeed;
-  }
-  else 
-  {
-    this->step_delay = 60L * 1000L / this->number_of_steps / whatSpeed;
-  }
+  this->step_delay = 60L * 1000L / this->number_of_steps / revs_per_minute;
 }
 
 /*
   Moves the motor steps_to_move steps.  If the number is negative, 
    the motor moves in the reverse direction.
  */
-void StepperAmperka::step(int steps_to_move)
+void StepperAmperka::step(int steps_to_move, uint8_t step_type)
 {  
   int steps_left = abs(steps_to_move);  // how many steps to take
   
   // determine direction based on whether steps_to_mode is + or -:
   if (steps_to_move > 0) {this->direction = 1;}
   if (steps_to_move < 0) {this->direction = 0;}
-    
+
+  if (step_type == FULL_STEP) {
+    digitalWrite(this->motor_pin_2, HIGH);
+    digitalWrite(this->motor_pin_3, HIGH);
+  }
+
+  unsigned long step_delay = this->step_delay;
+  if (step_type == HALF_STEP)
+    step_delay /= 2;
     
   // decrement the number of steps, moving one step each time:
   while(steps_left > 0) {
-  
-  // move only if the appropriate delay has passed:
-  if (millis() - this->last_step_time >= this->step_delay) {
+
+    // move only if the appropriate delay has passed:
+    if (millis() - this->last_step_time >= step_delay) {
       // get the timeStamp of when you stepped:
       this->last_step_time = millis();
       // increment or decrement the step number,
@@ -170,13 +109,13 @@ void StepperAmperka::step(int steps_to_move)
       steps_left--;
 
       // WAVE_DRIVE, FULL_STEP, HALF_STEP 
-      if (stepType==HALF_STEP) {
-      // step the motor to step number 0, 1, 2, 3, 4, 5, 6, 7, 8:
-        stepMotor(this->step_number % 8);
+      if (step_type == HALF_STEP) {
+        // step the motor to step number 0, 1, 2, 3, 4, 5, 6, 7, 8:
+        stepMotor(this->step_number % 8, step_type);
       }
       else {
-      // step the motor to step number 0, 1, 2, or 3:
-      stepMotor(this->step_number % 4);
+        // step the motor to step number 0, 1, 2, or 3:
+        stepMotor(this->step_number % 4, step_type);
       }
     }
   }
@@ -185,9 +124,9 @@ void StepperAmperka::step(int steps_to_move)
 /*
  * Moves the motor forward or backwards.
  */
-void StepperAmperka::stepMotor(int thisStep)
+void StepperAmperka::stepMotor(int thisStep, uint8_t step_type)
 {
-  if (this->stepType == FULL_STEP) {
+  if (step_type == FULL_STEP) {
     switch (thisStep) {
       case 3: /* 01 */
       digitalWrite(motor_pin_1, LOW);
@@ -206,8 +145,7 @@ void StepperAmperka::stepMotor(int thisStep)
       digitalWrite(motor_pin_4, LOW);
       break;
     } 
-  }
-  if (this->stepType == WAVE_DRIVE) {
+  } else if (step_type == WAVE_DRIVE) {
     switch (thisStep) {
       case 0:    // 1010
       digitalWrite(motor_pin_1, HIGH);
@@ -234,8 +172,7 @@ void StepperAmperka::stepMotor(int thisStep)
       digitalWrite(motor_pin_4, LOW);
       break;
     } 
-  }
-    if (this->stepType == HALF_STEP) {
+  } else if (step_type == HALF_STEP) {
     switch (thisStep) {
       case 0:    // 1, 1, 0, 0
       digitalWrite(motor_pin_2, HIGH);
@@ -286,14 +223,6 @@ void StepperAmperka::stepMotor(int thisStep)
       digitalWrite(motor_pin_3, HIGH);
       digitalWrite(motor_pin_4, LOW);
       break;
-      }
     }
-}
-
-/*
-  version() returns the version of the library:
-*/
-int StepperAmperka::version(void)
-{
-  return 4;
+  }
 }
