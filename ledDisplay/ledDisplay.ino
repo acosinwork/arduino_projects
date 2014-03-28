@@ -59,12 +59,19 @@ void paintLine(byte redPoint, byte greenPoint, byte line)
   byte secondByte=0;
   byte a, b;
   
+  a=0b00000001;
+  b=0b00010000;
+  
   for (byte i = 0; i < 4; ++i)
   {
-      firstByte |= (redPoint & (1<<i))<<i;      
-      firstByte |= (greenPoint & (1<<i))<<(i+1); 
-      secondByte |= (redPoint & (1<<(i+4)))<<i; 
-      secondByte |= (greenPoint & (1<<(i+4)))<<(i+1); 
+      firstByte |= (redPoint & a)<<i;      
+      secondByte |= (redPoint & b)<<i;
+
+      firstByte |= (greenPoint & a)<<(i+1); 
+      secondByte |= (greenPoint & b)<<(i+1); 
+    
+      a=a<<1;
+      b=b<<1;
   }  
   
 //  Serial.println(firstByte);
