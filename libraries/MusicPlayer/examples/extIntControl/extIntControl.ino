@@ -9,6 +9,7 @@
 //  Version: 1.7
 //  Time: June 10, 2012
 //  Changing records:
+//    Version 1.8 by Jack Shao
 //    
 //  This library is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU Lesser General Public
@@ -23,31 +24,25 @@
 //  You should have received a copy of the GNU Lesser General Public
 //  License along with this library; if not, write to the Free Software
 //  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-#include <Fat16.h>
-#include <Fat16Util.h>
-#include <NewSPI.h>
+#include <SD.h>
+#include <SPI.h>
 #include <arduino.h>
-#include "pins_config.h"
-#include "vs10xx.h"
-#include "newSDLib.h"
-#include "MusicPlayer.h"
-MusicPlayer myplayer;
+#include <MusicPlayer.h>
+
 void setup()
 {
   Serial.begin(9600);
-  myplayer.keyDisable();//keys disable first;
-  myplayer.begin();//will initialize the hardware and set default mode to be normal.
-  attachInterrupt(0, playNextSong, FALLING);//pin2 -> INT0,pin3 -> INT1,pin21 of MEGA can be INT2
+  player.keyDisable();//keys disable first;
+  player.begin();//will initialize the hardware and set default mode to be normal.
+  attachInterrupt(0, playNextSong, FALLING); //pin2 -> INT0,pin3 -> INT1,pin21 of MEGA can be INT2
+  player.setPlayMode(PM_REPEAT_LIST); //set mode to repeat to play all the songs in the list
+  player.scanAndPlayAll(); //If the current playlist is empty,it will add all the songs in the root directory to the playlist.
 }
 void loop()
 {
-  myplayer.setPlayMode(MODE_REPEAT_LIST);//set mode to repeat to play all the songs in the list
-  myplayer.creatPlaylist();//If the current playlist is empty,it will add all the songs in the root directory to the playlist.
-                           //Otherwise it will add the current song to the new playlist.
-  myplayer.playList();
-  while(1);
+  player.play();
 }
 void playNextSong()//User-defined function
 {
-  myplayer.opNextSong();
+  player.opNextSong();
 }

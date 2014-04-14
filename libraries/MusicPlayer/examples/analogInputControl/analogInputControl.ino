@@ -8,7 +8,8 @@
 //  Version: 1.7
 //  Time: June 10, 2012
 //  Changing records:
-//    
+//     V1.8 by Jacky Shao
+//
 //  This library is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU Lesser General Public
 //  License as published by the Free Software Foundation; either
@@ -22,34 +23,28 @@
 //  You should have received a copy of the GNU Lesser General Public
 //  License along with this library; if not, write to the Free Software
 //  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-#include <Fat16.h>
-#include <Fat16Util.h>
-#include <NewSPI.h>
+#include <SD.h>
+#include <SPI.h>
 #include <arduino.h>
-#include "pins_config.h"
-#include "vs10xx.h"
-#include "newSDLib.h"
-#include "MusicPlayer.h"
-MusicPlayer myplayer;
-void setup()
+#include <MusicPlayer.h>
+
+void setup(void)
 {
   Serial.begin(9600);
-  myplayer.keyDisable();//keys disable first;
-  myplayer.analogControlEnable();//enable to scan the A4/A5 
-  myplayer.begin();//will initialize the hardware and set default mode to be normal.
-  myplayer.attachAnalogOperation(A4,adjustVolume);//Grove - Rotary Angle Sensor connected to A4,to control the volume
+  player.keyDisable(); //keys disable first;
+  player.analogControlEnable(); //enable to scan the A4/A5
+  player.begin(); //will initialize the hardware and set default mode to be normal.
+  player.attachAnalogOperation(A4, adjustVolume); //Grove - Rotary Angle Sensor connected to A4,to control the volume
+  player.scanAndPlayAll(); //If the current playlist is empty,it will add all the songs in the root directory to the playlist.
 }
-void loop()
+void loop(void)
 {
-  myplayer.creatPlaylist();//If the current playlist is empty,it will add all the songs in the root directory to the playlist.
-                           //Otherwise it will add the current song to the new playlist.
-  myplayer.playList();
-  while(1);//If the mode is normal, it will stop when it finished playing all the songs in the playlist
+  player.play();
 }
-void adjustVolume()//User-defined function
+void adjustVolume(void) //User-defined function
 {
   unsigned int vol_temp = analogRead(A4);
-  unsigned char volume = vol_temp/12;
-  if(volume == 0x55)volume = SILENT;//SILENT = 0xfe;
-  myplayer.setVolume(volume);
+  unsigned char volume = vol_temp / 12;
+  if (volume == 0x55) volume = MAXVOL; //MAXVOL = 0xfe;
+  player.setVolume(volume);
 }

@@ -40,11 +40,11 @@
 #define VS_XCS    A3
 
 /////////////////////for keys//////////////////////////////////////
-#define KEY_VD   7
+#define KEY_VD   3
 #define KEY_BK   6
 #define KEY_PS   5
 #define KEY_NT   4
-#define KEY_VU   3
+#define KEY_VU   7
 
 //////////////////for Green LED///////////////////////////////////////
 #define GREEN_LED 	8

@@ -9,6 +9,7 @@
 //  Version: 1.7
 //  Time: June 10, 2012
 //  Changing records:
+//    Version 1.8 by Jack Shao
 //    
 //  This library is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU Lesser General Public
@@ -23,45 +24,39 @@
 //  You should have received a copy of the GNU Lesser General Public
 //  License along with this library; if not, write to the Free Software
 //  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-#include <Fat16.h>
-#include <Fat16Util.h>
-#include <NewSPI.h>
+#include <SD.h>
+#include <SPI.h>
 #include <arduino.h>
-#include "pins_config.h"
-#include "vs10xx.h"
-#include "newSDLib.h"
-#include "MusicPlayer.h"
-MusicPlayer myplayer;
-void setup()
+#include <MusicPlayer.h>
+
+void setup(void)
 {
   Serial.begin(9600);
-  myplayer.keyDisable();//keys disable first;
-  myplayer.digitalControlEnable();
-  myplayer.begin();
-  //myplayer.attachDigitOperation(2,playNextSong,HIGH);
-  //myplayer.attachDigitOperation(2,playPause,HIGH);
-  myplayer.attachDigitOperation(2,volumeUp,HIGH);//the button connected to pin2,and HIGH leval is valid
+  player.keyDisable(); //keys disable first;
+  player.digitalControlEnable();
+  player.begin();
+  //player.attachDigitOperation(2,playNextSong,HIGH);
+  //player.attachDigitOperation(2,playPause,HIGH);
+  player.attachDigitOperation(2, volumeUp, HIGH); //the button connected to pin2,and HIGH leval is valid
+  player.setPlayMode(PM_NORMAL_PLAY);
+  player.scanAndPlayAll(); //If the current playlist is empty,it will add all the songs in the root directory to the playlist.
 }
 void loop()
 {
-  myplayer.setPlayMode(MODE_NORMAL);
-  myplayer.creatPlaylist();//If the current playlist is empty,it will add all the songs in the root directory to the playlist.
-                           //Otherwise it will add the current song to the new playlist.
-  myplayer.playList();
-  while(1);//If the mode is normal, it will stop when it finished playing all the songs in the playlist 
+  player.play();
 }
 void playNextSong()//User-defined function
 {
-  myplayer.opNextSong();
+  player.opNextSong();
 }
 void playPause()//User-defined function
 {
   static boolean flag_on = 1;
-  if(flag_on) myplayer.opPlay();
-  else myplayer.opPause();
+  if(flag_on) player.opPlay();
+  else player.opPause();
   flag_on = !flag_on;
 }
 void volumeUp()//User-defined function
 {
-  myplayer.opVolumeUp();
+  player.opVolumeUp();
 }

@@ -1,28 +1,24 @@
 #######################################
-# Syntax Coloring Map MusicPlayer_v1_7
+# Syntax Coloring Map SoftwareServo
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-MusicPlayer	KEYWORD1
-spl_t	KEYWORD1
-playingstatetype	KEYWORD1
+SoftwareServo  KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-begin	KEYWORD2
-playList	KEYWORD2
-playSong	KEYWORD2
-setVolume	KEYWORD2
-setPlayMode	KEYWORD2
-addToPlaylist	KEYWORD2
-attachDigitOperation	KEYWORD2
-creatPlaylist	KEYWORD2
-deleteSong	KEYWORD2
-attachAnalogOperation	KEYWORD2	
+attach KEYWORD2
+detach KEYWORD2
+write KEYWORD2
+read KEYWORD2
+attached KEYWORD2
+setMinimumPulse KEYWORD2
+setMaximumPulse KEYWORD2
+refresh KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

@@ -8,7 +8,8 @@
 //  Version: 1.7
 //  Time: June 10, 2012
 //  Changing records:
-//    
+//    Version 1.8 by Jack Shao
+//
 //  This library is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU Lesser General Public
 //  License as published by the Free Software Foundation; either
@@ -22,26 +23,20 @@
 //  You should have received a copy of the GNU Lesser General Public
 //  License along with this library; if not, write to the Free Software
 //  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-#include <Fat16.h>
-#include <Fat16Util.h>
-#include <NewSPI.h>
+#include <SD.h>
+#include <SPI.h>
 #include <arduino.h>
-#include "pins_config.h"
-#include "vs10xx.h"
-#include "newSDLib.h"
-#include "MusicPlayer.h"
-MusicPlayer myplayer;
+#include <MusicPlayer.h>
+
 void setup()
 {
   Serial.begin(9600);
-  myplayer.keyDisable();//keys disable first;All the keys will be invalid.
-  myplayer.begin();//will initialize the hardware and set default mode to be normal.
+  player.keyDisable();//keys disable first;All the keys will be invalid.
+  player.begin(); //will initialize the hardware and set default mode to be normal.
+  player.setPlayMode(PM_REPEAT_ONE); //set mode to repeat to play a song
+  player.scanAndPlayAll(); //If the current playlist is empty,it will add all the songs in the root directory to the playlist.
 }
 void loop()
 {
-  myplayer.setPlayMode(MODE_REPEAT_ONE);//set mode to repeat to play a song
-  myplayer.creatPlaylist();//If the current playlist is empty,it will add all the songs in the root directory to the playlist.
-                           //Otherwise it will add the current song to the new playlist.
-  myplayer.playList();
-  while(1);
+  player.play();
 }

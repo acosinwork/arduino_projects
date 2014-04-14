@@ -1,0 +1,7 @@
+/* Strela.cpp
+ * Strela library 
+ *
+ *
+ */
+ 
+ 
