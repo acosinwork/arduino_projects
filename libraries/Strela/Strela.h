@@ -7,9 +7,6 @@
 #ifndef STRELA_H
 #define STRELA_H
 
-
-
-
 #include <inttypes.h> 
 
 #define RESOLUTION 65536    // Timer3 is 16 bit
@@ -32,7 +29,7 @@ enum BUTTON
     S2,
     S3,
     S4    
-}
+};
 
 enum LED
 {
@@ -40,49 +37,52 @@ enum LED
     L2,
     L3,
     L4    
-}
+};
 
 enum MOTOR
 {
     M1,
     M2
-}
+};
  
-class Strela
+class Strela_t
 {
     public:
-        void init();
+        void begin();
         
         void motors(
-            int motorSpeed_1 = 0,
-            int motorSpeed_2 = 0);
+            int motorSpeed_1,
+            int motorSpeed_2);
             
         void motorSpeed(
             MOTOR mot,
             int speed);
         
         void motorConnection(
-            bool direction_1 = 0,
-            bool direction_2 = 0);
+            bool direction_1,
+            bool direction_2);
             
         void ledWrite(
             LED ld,
             bool state);    
             
         bool buttonRead(BUTTON btn);
+        
+        void onTimerInterrupt();
 
     
     private:
-        uint8_t _currentMotorSpeed_1 = 0;
-        uint8_t _currentMotorSpeed_2 = 0;
-        uint8_t _pwmCounter = 0;
-        bool _motorConnection_1 = 0;
-        bool _motorConnection_2 = 0;
+        uint8_t _currentMotorSpeed_1;
+        uint8_t _currentMotorSpeed_2;
+        uint8_t _pwmCounter;
+        bool _motorConnection_1;
+        bool _motorConnection_2;
         void _setMotorDirections(
             bool direction_1,
             bool direction_2);
         
         
-}
+};
+extern Strela_t Strela; 
 
 #endif

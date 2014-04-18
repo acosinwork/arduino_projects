@@ -3,13 +3,24 @@
  *
  *
  */
+ 
+#include <Strela.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
+
+//#include <inttypes.h> 
+
 #include <Arduino.h>
 #include <Wire.h>
 
+Strela_t Strela;
 
 ISR(TIMER3_OVF_vect)          // interrupt service routine for software PWM
+{
+    Strela.onTimerInterrupt();
+}
+
+void Strela_t::onTimerInterrupt()
 {
     if (_currentMotorSpeed_1 < _pwmCounter)
         PORTB &= ~_BV(6); //pin 10 LOW
@@ -24,8 +35,16 @@ ISR(TIMER3_OVF_vect)          // interrupt service routine for software PWM
     ++_pwmCounter;
 }
 
-Strela::init()
+void Strela_t::begin()
 {
+    // Variables initialize
+    
+    _currentMotorSpeed_1 = 0;
+    _currentMotorSpeed_2 = 0;
+    _pwmCounter = 0;
+    _motorConnection_1 = 0;
+    _motorConnection_2 = 0;
+
     // Configure I2C i/o chip
     Wire.begin();
     Wire.beginTransmission(GPUX_TWI_ADDR);
@@ -48,7 +67,7 @@ Strela::init()
     TCCR3B = _BV(WGM13);        // set mode as phase and frequency correct pwm, stop the timer
     
     unsigned char clockSelectBits;
-    long cycles = 800;//(F_CPU * microseconds) / 2000000;                                // the counter runs backwards after TOP, interrupt is at BOTTOM so divide microseconds by 2
+    long cycles = 255;//(F_CPU * microseconds) / 2000000;                                // the counter runs backwards after TOP, interrupt is at BOTTOM so divide microseconds by 2
     clockSelectBits = _BV(CS10);
 
     /*
@@ -66,10 +85,18 @@ Strela::init()
 
     TIMSK3 = _BV(TOIE1);                                     // sets the timer overflow interrupt enable bit
     sei();                                                   // ensures that interrupts are globally enabled
-    TCCR3B |= clockSelectBits;
+//    TCCR3B |= clockSelectBits;  // 
 }
 
-Strela::_setMotorDirections(
+void Strela_t:: motorConnection(
+            bool direction_1,
+            bool direction_2)
+{
+    _motorConnection_1=direction_1;
+    _motorConnection_2=direction_2;    
+}
+
+void Strela_t::_setMotorDirections(
             bool direction_1,
             bool direction_2)
 {
@@ -80,14 +107,14 @@ Strela::_setMotorDirections(
         PORTE &= ~_BV(2);
         
     direction = direction_2;
-    if (direction ^ _motorConnection_1)
+    if (direction ^ _motorConnection_2)
         PORTD |= _BV(4);  //digitalWrite(4, HIGH)
     else
         PORTD &= ~_BV(4); //digitalWrite(4, LOW)
         
 }
 
-Strela::motors(
+void Strela_t::motors(
             int motorSpeed_1,
             int motorSpeed_2)
 { 
@@ -97,14 +124,14 @@ Strela::motors(
     _currentMotorSpeed_2 = constrain( abs (motorSpeed_2), 0, 255);
 }
 
-Strela::motorSpeed(
+void Strela_t::motorSpeed(
             MOTOR mot,
             int speed)
 {
-    //TODO: ага
+    //TODO: todo
 }
 
-bool Strela::buttonRead(BUTTON btn)
+bool Strela_t::buttonRead(BUTTON btn)
 {
     Wire.beginTransmission(GPUX_TWI_ADDR);
     Wire.write(WIRE_INPUT_READ_MODE); // input read mode
@@ -117,7 +144,7 @@ bool Strela::buttonRead(BUTTON btn)
     return state & (1 << (3 - btn));
 }
 
-Strela::ledWrite(
+void Strela_t::ledWrite(
             LED ld,
             bool state)
 {

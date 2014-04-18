@@ -1,16 +1,21 @@
+#include <Wire.h>
+
 #include <Strela.h>
 
-Strela myRobot;
+//Strela strela;
 
 void setup() {
   // put your setup code here, to run once:3
-  myRobot.init();
+  Strela.begin();
+  Strela.motorConnection(true,false);
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  
-  myRobot.motors(200,-30);
-
+  for (int i=-100; i<100; ++i)
+{
+  Strela.motors(-i,i);
+  delay(100);
+}
 }
