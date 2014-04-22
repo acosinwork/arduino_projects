@@ -2,6 +2,7 @@
 #define DOTS = 1
 #define DASHES = 3
 #define SPACE = 5
+#define MORSE_LENGTH_MASK = 0b00000111
 
 int dotLengthMillis = 100;
 
@@ -93,6 +94,12 @@ void loop() {
 
 void morsePrint(byte printByte);
 {
+  byte morseCharLength = printByte & MORSE_LENGTH_MASK;
+  
+  for (byte i=0; i<morseCharLength; i++)
+  {
+    if
+  }
   
 }
 
