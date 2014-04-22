@@ -1,8 +1,16 @@
 
-#define DOTS = 1
-#define DASHES = 3
-#define SPACE = 5
-#define MORSE_LENGTH_MASK = 0b00000111
+/*
+Азбука Морзе.
+ За единицу времени принимается длительность одной точки. 
+ Длительность тире равна трём точкам. 
+ Пауза между элементами одного знака — одна точка, 
+ между знаками в слове — 3 точки, между словами — 5 точек.
+ */
+
+#define DOTS              1
+#define DASHES            3
+#define SPACE             5
+#define MORSE_LENGTH_MASK 0b00000111
 
 int dotLengthMillis = 100;
 
@@ -53,7 +61,7 @@ byte morseNumCode[] =
 };
 
 byte relayPin = 13;
-unsigned long time;
+//unsigned long time;
 byte incomingByte;      // a variable to read incoming serial data into
 
 void setup() {
@@ -63,7 +71,7 @@ void setup() {
   pinMode(relayPin, OUTPUT);
   digitalWrite(relayPin, LOW);
 
-  time = millis();
+  //  time = millis();
 
 }
 
@@ -71,35 +79,76 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   // see if there's incoming serial data:
-  if (Serial.available() > 0) {
+  if (Serial.available() > 0) 
+  {
     // read the oldest byte in the serial buffer:
     incomingByte = Serial.read();
     //    Serial.write(incomingByte);
-    
-    if ((incomingByte>96) && (incomingByte<123) // small char
+
+    if ((incomingByte > 96) && (incomingByte < 123)) // small char
     {
       incomingByte = incomingByte - 32; // convert to BIG CHAR
     }
-    
-    if ((incomingByte>64) && (incomingByte<91) // BIG CHAR
+
+    if ((incomingByte > 64) && (incomingByte < 91)) // BIG CHAR
     {
       incomingByte = incomingByte - 65; // to morseCharCode adress
+
+      morsePrint(morseCharCode[incomingByte]);
     }
-    
+    else if ((incomingByte > 47) && (incomingByte < 58))
+    {
+      morsePrint(morseNumCode[incomingByte]);
+    }
+    else if ((incomingByte = ' ') || (incomingByte = '/n'))
+    {
+      //pause between words (5 dot length, but we do two dot pause after last character)
+
+      delay(3*dotLengthMillis);
+    }
+
 
   }
-  
+
 
 }
 
-void morsePrint(byte printByte);
+void morsePrint(byte printByte)
 {
   byte morseCharLength = printByte & MORSE_LENGTH_MASK;
-  
+  int currentDelay;
+
   for (byte i=0; i<morseCharLength; i++)
   {
-    if
+    if (printByte & 0b10000000)
+    {
+      currentDelay = DASHES*dotLengthMillis;
+    }
+    else
+    {
+      currentDelay = DOTS*dotLengthMillis;
+    }
+    // do action
+    digitalWrite(relayPin, HIGH);
+    delay(currentDelay);
+    digitalWrite(relayPin, LOW);
+
+    //pause between dots or dashes
+    delay(dotLengthMillis);
+
+    printByte <<= 1;    
   }
-  
+
+  //pause between characters (3 dot length, but we do one dot pause after last dot)
+
+  delay(2*dotLengthMillis);
+
+
 }
+
+
+
+
+
+
 
