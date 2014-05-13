@@ -12,7 +12,7 @@
 #define SPACE             5
 #define MORSE_LENGTH_MASK 0b00000111
 
-int dotLengthMillis = 100;
+int dotLengthMillis = 80;
 
 byte morseCharCode[] =
 {
@@ -29,7 +29,7 @@ byte morseCharCode[] =
   0b00000010, // I ..
   0b01110100, // J ._ _ _
   0b10100011, // K _._
-  0b01000010, // L ._..
+  0b01000100, // L ._..
   0b11000010, // M _ _
   0b10000010, // N _.
   0b11100011, // O _ _ _
@@ -60,7 +60,7 @@ byte morseNumCode[] =
   0b11110101  // 9 _ _ _ _.
 };
 
-byte relayPin = 13;
+byte relayPin = A0;//13;
 //unsigned long time;
 byte incomingByte;      // a variable to read incoming serial data into
 
@@ -123,13 +123,16 @@ void morsePrint(byte printByte)
     if (printByte & 0b10000000)
     {
       currentDelay = DASHES*dotLengthMillis;
+//      Serial.print('-');
     }
     else
     {
       currentDelay = DOTS*dotLengthMillis;
+//      Serial.print('.');
     }
     // do action
     digitalWrite(relayPin, HIGH);
+    tone(A5, 800, currentDelay);
     delay(currentDelay);
     digitalWrite(relayPin, LOW);
 

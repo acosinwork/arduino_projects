@@ -3,37 +3,32 @@
  *
  *
  */
- 
-#include <Strela.h>
+
+
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-//#include <inttypes.h> 
-
 #include <Arduino.h>
-#include <Wire.h>
+#include <Wire.h> 
+
+#include <Strela.h>
+
 
 Strela_t Strela;
 
-ISR(TIMER3_OVF_vect)          // interrupt service routine for software PWM
+
+ISR(TIMER4_OVF_vect)          // interrupt service routine for software PWM
 {
-    Strela.onTimerInterrupt();
+   PORTB |= _BV(5); //pin 9 HIGH
+
 }
 
-void Strela_t::onTimerInterrupt()
+ISR(TIMER4_COMPD_vect)          // interrupt service routine for software PWM
 {
-    if (_currentMotorSpeed_1 < _pwmCounter)
-        PORTB &= ~_BV(6); //pin 10 LOW
-    else
-        PORTB |= _BV(6); //pin 10 HIGH
+    PORTB &= ~_BV(5); //pin 9 LOW
 
-    if (_currentMotorSpeed_2 < _pwmCounter)
-        PORTB &= ~_BV(5); //pin 9 LOW
-    else
-        PORTB |= _BV(5); //pin 9 HIGH
-
-    ++_pwmCounter;
 }
+
 
 void Strela_t::begin()
 {
@@ -53,39 +48,17 @@ void Strela_t::begin()
     Wire.endTransmission();
     
     // Configure Pin
-/*    
-    pinMode(MOTOR_ENABLE_12_PIN, OUTPUT);
-    pinMode(MOTOR_ENABLE_34_PIN, OUTPUT);
-    pinMode(MOTOR_DIRECTION_34_PIN, OUTPUT);
-*/
+
     DDRE |= _BV(2);           //pinMode(PE2, OUTPUT);
     DDRD |= _BV(4);           //pinMode(4, OUTPUT);
     DDRB |= _BV(5) | _BV(6);  //pinMode(9,10, OUTPUT);
     
-    // Configure software PWM Timer
-    TCCR3A = 0;                 // clear control register A 
-    TCCR3B = _BV(WGM13);        // set mode as phase and frequency correct pwm, stop the timer
     
-    unsigned char clockSelectBits;
-    long cycles = 255;//(F_CPU * microseconds) / 2000000;                                // the counter runs backwards after TOP, interrupt is at BOTTOM so divide microseconds by 2
-    clockSelectBits = _BV(CS10);
-
-    /*
-    if(cycles < RESOLUTION)              clockSelectBits = _BV(CS10);              // no prescale, full xtal
-    else if((cycles >>= 3) < RESOLUTION) clockSelectBits = _BV(CS11);              // prescale by /8
-    else if((cycles >>= 3) < RESOLUTION) clockSelectBits = _BV(CS11) | _BV(CS10);  // prescale by /64
-    else if((cycles >>= 2) < RESOLUTION) clockSelectBits = _BV(CS12);              // prescale by /256
-    else if((cycles >>= 2) < RESOLUTION) clockSelectBits = _BV(CS12) | _BV(CS10);  // prescale by /1024
-    else        cycles = RESOLUTION - 1, clockSelectBits = _BV(CS12) | _BV(CS10);  // request was out of bounds, set as maximum
-*/
-    ICR3 = cycles;                                                     // ICR1 is TOP in p & f correct pwm mode
-
-    TCCR3B &= ~(_BV(CS10) | _BV(CS11) | _BV(CS12));
-    TCCR3B |= clockSelectBits;                                                     // reset clock select register
-
-    TIMSK3 = _BV(TOIE1);                                     // sets the timer overflow interrupt enable bit
-    sei();                                                   // ensures that interrupts are globally enabled
-//    TCCR3B |= clockSelectBits;  // 
+    // Configure software PWM4D Timer to fast PWM
+    TCCR4A |= (1<<COM4B1); //enable communicate pin 10 and OCR4
+    TCCR4D &= ~(1<<WGM41) & ~(1<<WGM40); 
+    TC4H =0;
+    
 }
 
 void Strela_t:: motorConnection(
@@ -102,15 +75,15 @@ void Strela_t::_setMotorDirections(
 {
     bool direction = direction_1;
     if (direction ^ _motorConnection_1)
-        PORTE |= _BV(2);
-    else
-        PORTE &= ~_BV(2);
-        
-    direction = direction_2;
-    if (direction ^ _motorConnection_2)
         PORTD |= _BV(4);  //digitalWrite(4, HIGH)
     else
         PORTD &= ~_BV(4); //digitalWrite(4, LOW)
+        
+    direction = direction_2;
+    if (direction ^ _motorConnection_2)
+        PORTE |= _BV(2);
+    else
+        PORTE &= ~_BV(2);
         
 }
 
@@ -120,18 +93,65 @@ void Strela_t::motors(
 { 
     _setMotorDirections((motorSpeed_1 < 0), (motorSpeed_2 < 0));
 
-    _currentMotorSpeed_1 = constrain( abs (motorSpeed_1), 0, 255);
-    _currentMotorSpeed_2 = constrain( abs (motorSpeed_2), 0, 255);
+    _currentMotorSpeed_1 = abs(motorSpeed_1);
+    _currentMotorSpeed_2 = abs(motorSpeed_2);
+    
+    //Motor 1 on PWM works on interrupts
+    
+    if (_currentMotorSpeed_1 >= 255)
+    {
+        TIMSK4 &= ~(1<<TOIE4) & ~(1<<OCIE4D); //disable interrupts on TIMER4 OVF and OCR4D
+        PORTB |= _BV(5); //pin 9 HIGH
+    } 
+    else if (_currentMotorSpeed_1 == 0)
+    {
+        TIMSK4 &= ~(1<<TOIE4) & ~(1<<OCIE4D);  //disable interrupts on TIMER4 OVF and OCR4D
+        PORTB &= ~_BV(5); //pin 9 LOW
+    }
+    else 
+    {
+        TCCR4C &= ~(1<<COM4D1);  //disable PWM on Pin 6
+ 
+        //set PWM period
+        OCR4D = _currentMotorSpeed_1;
+        //enable interrupts on TIMER4 OVF and OCR4D
+        TIMSK4 |= (1<<TOIE4)|(1<<OCIE4D);
+    }
+    
+    //Motor2 PWM is hardware 
+    
+    if (_currentMotorSpeed_2 >= 255)
+    {
+        //disable communicate pin 10 with OCR4 and PWM
+        TCCR4A &= ~(1<<PWM4B) & ~(1<<COM4B1);
+        PORTB |= _BV(6); //pin 10 HIGH
+    } 
+    else if (_currentMotorSpeed_2 == 0)
+    {
+        //disable communicate pin 10 with OCR4 and PWM
+        TCCR4A &= ~(1<<PWM4B) & ~(1<<COM4B1); 
+        PORTB &= ~_BV(6); //pin 10 LOW
+    }
+    else 
+    {   
+        //set PWM period
+        OCR4B = _currentMotorSpeed_2;
+        TCCR4A |= (1<<PWM4B)|(1<<COM4B1); //enable communicate pin 10 with OCR4 and enable PWM
+    }
 }
 
 void Strela_t::motorSpeed(
-            MOTOR mot,
+            uint8_t mot,
             int speed)
 {
-    //TODO: todo
+/*    if (mot = M1)
+    {
+        Strela_t.motors(
+    }
+    */
 }
 
-bool Strela_t::buttonRead(BUTTON btn)
+bool Strela_t::buttonRead(uint8_t btn)
 {
     Wire.beginTransmission(GPUX_TWI_ADDR);
     Wire.write(WIRE_INPUT_READ_MODE); // input read mode
@@ -141,11 +161,11 @@ bool Strela_t::buttonRead(BUTTON btn)
     // TODO: is reading without wait is right?
     int state = Wire.read();
  
-    return state & (1 << (3 - btn));
+    return !(state & (1 << (3 - btn)));
 }
 
 void Strela_t::ledWrite(
-            LED ld,
+            uint8_t ld,
             bool state)
 {
     Wire.beginTransmission(GPUX_TWI_ADDR);
