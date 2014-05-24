@@ -1,6 +1,6 @@
 
 #include <Wire.h>
-#include <StrelaSimple.h>
+#include <Strela.h>
 #include <LiquidCrystal_I2C.h>
 
 // =======================================================================
@@ -8,7 +8,7 @@
 //                    addr, en,rw,rs,d4,d5,d6,d7,bl,blpol
 LiquidCrystal_I2C lcd(LC_ADDR, LCEN, LCRW, LCRS, LC4, LC5, LC6, LC7);
 
-Strela_t S;
+Strela S;
 
 void setup()
 {
