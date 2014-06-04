@@ -9,7 +9,6 @@
 LiquidCrystal_I2C lcd(LC_ADDR, LCEN, LCRW, LCRS, LC4, LC5, LC6, LC7);
 
 
-
 void setup()
 {
 
