@@ -32,6 +32,28 @@ namespace {
     uint8_t ledState = 0;
     uint8_t lcdPinState =0;
     
+void twiWriteOut(uint8_t address, uint8_t value)
+{
+    Wire.beginTransmission(address);
+    Wire.write(WIRE_OUTPUT_WRITE_MODE); // output write mode
+    Wire.write(~value);
+    Wire.endTransmission();
+}
+
+uint8_t twiReadIn(uint8_t address, uint8_t pin)
+{
+    
+    Wire.beginTransmission(address);
+    Wire.write(WIRE_INPUT_READ_MODE); // input read mode
+    Wire.endTransmission();
+ 
+    uint8_t n = Wire.requestFrom(address, (uint8_t)1);
+    // TODO: is reading without wait is right?
+    uint8_t state = Wire.read();
+    
+    return !(state & (1 << pin));
+}
+    
 }
 
 
@@ -65,29 +87,6 @@ void uPinMode(uint8_t pin, uint8_t mode)
     }                
 }
 
-void twiWriteOut(uint8_t address, uint8_t value)
-{
-    Wire.beginTransmission(address);
-    Wire.write(WIRE_OUTPUT_WRITE_MODE); // output write mode
-    Wire.write(~value);
-    Wire.endTransmission();
-}
-
-uint8_t twiReadIn(uint8_t address, uint8_t pin)
-{
-    
-    Wire.beginTransmission(address);
-    Wire.write(WIRE_INPUT_READ_MODE); // input read mode
-    Wire.endTransmission();
- 
-    uint8_t n = Wire.requestFrom(address, (uint8_t)1);
-    // TODO: is reading without wait is right?
-    uint8_t state = Wire.read();
-    
-    return !(state & (1 << pin));
-}
-
-
 
 void uDigitalWrite(uint8_t pin, uint8_t val)
 {
@@ -115,7 +114,7 @@ void uDigitalWrite(uint8_t pin, uint8_t val)
     
     else // pin>=Q0 && pin<=Q7
     {
-        uint8_t curPin = pin - Q0;
+        uint8_t curPin = _LC(pin);
         (val) ? lcdPinState |= 1 << curPin : lcdPinState &= ~(1 << curPin);
         twiWriteOut(LCD_TWI_ADDR, lcdPinState);
     }        
@@ -147,7 +146,7 @@ uint8_t uDigitalRead(uint8_t pin)
 
 
 
-void Strela_t::begin()
+void Strela::begin()
 {
     // Variables initialize
     
@@ -164,6 +163,13 @@ void Strela_t::begin()
     Wire.write(WIRE_IO_CONFIGURATION); 
     Wire.endTransmission();
     
+        // Configure I2C LCD i/o chip
+    Wire.begin();
+    Wire.beginTransmission(LCD_TWI_ADDR);
+    Wire.write(WIRE_IO_CONFIG_MODE);
+    Wire.write(0xff); //all INPUT
+    Wire.endTransmission();
+    
     // Configure Pin
 
     DDRE |= _BV(2);           //pinMode(PE2, OUTPUT);
@@ -178,7 +184,7 @@ void Strela_t::begin()
     
 }
 
-void Strela_t:: motorConnection(
+void Strela:: motorConnection(
             bool direction_1,
             bool direction_2)
 {
@@ -186,7 +192,7 @@ void Strela_t:: motorConnection(
     _motorConnection_2=direction_2;    
 }
 
-void Strela_t::_setMotorDirections(
+void Strela::_setMotorDirections(
             bool direction_1,
             bool direction_2)
 {
@@ -204,7 +210,7 @@ void Strela_t::_setMotorDirections(
         
 }
 
-void Strela_t::drive(
+void Strela::drive(
             int motorSpeed_1,
             int motorSpeed_2)
 { 
@@ -258,27 +264,19 @@ void Strela_t::drive(
 }
 
 
-bool Strela_t::buttonRead(uint8_t btn)
+bool Strela::buttonRead(uint8_t btn)
 {
-    Wire.beginTransmission(GPUX_TWI_ADDR);
-    Wire.write(WIRE_INPUT_READ_MODE); // input read mode
-    Wire.endTransmission();
  
-    int n = Wire.requestFrom(GPUX_TWI_ADDR, 1);
-    // TODO: is reading without wait is right?
-    int state = Wire.read();
- 
-    return !(state & (1 << (3 - btn)));
+    return twiReadIn(GPUX_TWI_ADDR, (3 - btn));
 }
 
-void Strela_t::ledWrite(
+void Strela::ledWrite(
             uint8_t ld,
             bool state)
 {
-    Wire.beginTransmission(GPUX_TWI_ADDR);
-    Wire.write(WIRE_OUTPUT_WRITE_MODE); // output write mode
-    Wire.write(~(state << (7 - ld)));
-    Wire.endTransmission();
+    (state) ? ledState |= 1 << (7 - ld) : ledState &= ~(1 << (7 - ld));
+    twiWriteOut(GPUX_TWI_ADDR, ledState);
+
 }
 
 

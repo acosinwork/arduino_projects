@@ -121,7 +121,7 @@ void uDigitalWrite(uint8_t pin, uint8_t val);
 uint8_t uDigitalRead(uint8_t pin);
             
 
-class Strela_t
+class Strela
 {
     public:
         void begin();
@@ -161,6 +161,6 @@ class Strela_t
         
         
 };
-extern Strela_t Strela; 
+
 
 #endif
