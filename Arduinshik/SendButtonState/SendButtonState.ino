@@ -8,17 +8,17 @@
 
 void setup()
 {
-pinMode(BUTTON_PIN, INPUT);
+  pinMode(BUTTON_PIN, INPUT);
 
-Serial.begin(9600);
+  Serial.begin(9600);
 }
 
 void loop()
 {
-bool isButtonDown = digitalRead(BUTTON_PIN);
+  bool isButtonDown = digitalRead(BUTTON_PIN);
 
-
-Serial.print(isButtonDown);
-delay(100);
+  Serial.print(isButtonDown);
+  delay(100);
 
 } 
+
