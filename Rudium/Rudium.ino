@@ -4,7 +4,7 @@
 #define MICROSECONDS 1000000 // микросекунд в секунде
 #define SAMPLE_PERIOD MICROSECONDS/SAMPLE_RATE //период измерения равен вот этому
 
-#define FREQ_SENSOR_PIN A0 // или другое..
+#define FREQ_SENSOR_PIN A3 // или другое..
 
 boolean volatile timeToReadValue = false; // эту переменную берём только из RAM
 
