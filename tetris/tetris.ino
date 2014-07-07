@@ -32,11 +32,10 @@ Comment:
 #define BT_RIGHT   A2
 #define BT_ROTATE  A3
 
-
-unsigned char latchPin = 3;
-unsigned char clockPin = 2;
-unsigned char dataPin = 4;
-unsigned char rowPin = 5;
+unsigned char latchPin = 4;
+unsigned char clockPin = 3;
+unsigned char dataPin = 2;
+unsigned char rowPin = 6;
 
 
 long delays = 0;
@@ -1098,8 +1097,8 @@ void LEDRefresh()
       
       digitalWrite(j,LOW);      
       digitalWrite(latchPin, LOW);
-      shiftOut(dataPin, clockPin, LSBFIRST, lower);      
-      shiftOut(dataPin, clockPin, LSBFIRST, upper);
+      shiftOut(dataPin, clockPin, MSBFIRST, lower);      
+      shiftOut(dataPin, clockPin, MSBFIRST, upper);
       digitalWrite(latchPin, HIGH);          
       digitalWrite(rowPin+i,HIGH);         
       delay(1);
