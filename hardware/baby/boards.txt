@@ -1,0 +1,18 @@
+
+##############################################################
+
+uno20mhz.name=Arduino Uno @ 20 MHz
+uno20mhz.upload.protocol=arduino
+uno20mhz.upload.maximum_size=32256
+uno20mhz.upload.speed=144000
+uno20mhz.bootloader.low_fuses=0xff
+uno20mhz.bootloader.high_fuses=0xde
+uno20mhz.bootloader.extended_fuses=0x05
+uno20mhz.bootloader.path=optiboot
+uno20mhz.bootloader.file=optiboot_atmega328.hex
+uno20mhz.bootloader.unlock_bits=0x3F
+uno20mhz.bootloader.lock_bits=0x0F
+uno20mhz.build.mcu=atmega328p
+uno20mhz.build.f_cpu=20000000L
+uno20mhz.build.core=arduino
+uno20mhz.build.variant=standard
