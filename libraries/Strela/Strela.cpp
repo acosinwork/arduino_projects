@@ -15,6 +15,33 @@
 #include <Strela.h>
 
 
+#define WIRE_IO_CONFIG_MODE      0x03
+#define WIRE_IO_CONFIGURATION    0x0F
+#define WIRE_OUTPUT_WRITE_MODE   0x01
+#define WIRE_INPUT_READ_MODE     0x00
+
+#define STRELA_INIT_CHECK if (!strelaInit) strelaInitialize()
+
+// IO-pin defines
+
+#undef A11  //used with buzzer
+#undef A10  //used with en12
+#undef A9   //used with en34
+#undef A6   //used with dir34
+
+#define MOTOR_ENABLE_12_PIN      10
+#define MOTOR_ENABLE_34_PIN      9
+#define MOTOR_DIRECTION_34_PIN   4
+
+#define LAST_PIN LS7
+
+//Перевод из Qx в LCx
+#define _LC(q) ((q)-Q0)
+//Перевод из LCx в Qx
+#define _Q(x) ((x)+Q0)
+
+
+
 ISR(TIMER4_OVF_vect)          // interrupt service routine for software PWM
 {
    PORTB |= _BV(5); //pin 9 HIGH
@@ -268,6 +295,17 @@ uint8_t uDigitalRead(uint8_t pin)
     }        
 }
 
+int uAnalogRead(uint8_t pin)
+{
+    return analogRead(pin);
+}
+
+void uAnalogWrite(uint8_t pin, int val)
+{
+    analogWrite(pin, val);
+}
+
+
 void strelaInitialize()
 {
    // Configure I2C i/o chip
@@ -332,27 +370,3 @@ void drive(
     _setMotorSpeed_2(motorSpeed_2);
 
 }
-
-/*
-bool Strela::buttonRead(uint8_t btn)
-{
-    if (btn < 4) 
-        return twiReadIn(GPUX_TWI_ADDR, (3 - btn));
-    else
-        return uDigitalRead(btn);    
-}
-
-void Strela::ledWrite(
-            uint8_t ld,
-            bool state)
-{
-    if (ld < 4) 
-    {
-        (state) ? ledState |= 1 << (7 - ld) : ledState &= ~(1 << (7 - ld));
-        twiWriteOut(GPUX_TWI_ADDR, ledState);  
-    }
-    else 
-        uDigitalWrite(ld, state);
-}
-
-*/
