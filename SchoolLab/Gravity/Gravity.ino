@@ -1,5 +1,5 @@
 
-#include <Scool.h>
+#include <School.h>
 
 #define TRESHOLD   10
 #define MID_A_VAL  511

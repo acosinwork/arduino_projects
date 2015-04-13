@@ -27,7 +27,7 @@ void setup() {
   yvalues = new float[w/xspacing];
   yvalues1 = new float[w/xspacing];
 
-  port = new Serial(this, "COM63", 115200);
+  port = new Serial(this, "COM4", 115200);
   port.bufferUntil('\n');
 }
 

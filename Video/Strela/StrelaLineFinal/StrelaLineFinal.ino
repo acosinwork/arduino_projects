@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <Strela.h>
 #include <LiquidCrystal_I2C.h>
-#include <Servo.h>
+//#include <Servo.h>
 
 #define ANALOG_IN_PIN   A2
 #define IR_PIN A5
@@ -15,17 +15,17 @@
 
 unsigned long time;
 
-Servo myservo;
+//Servo myservo;
 
 bool drive = true;
 
 LiquidCrystal_I2C lcd(0x21, 4, 5, 6, 0, 1, 2, 3);
 
-int basespeed = 85;
+int basespeed = 60;
 int average = 0;
 
-int k1 = 1;//0.05;//0.015
-float kub = 0;//0.000001;//0.00000017
+float k1 = 1.0;//0.05;//0.015
+float kub = 0.0;//0.000001;//0.00000017
 
 void setup() {
   // put your setup code here, to run once:

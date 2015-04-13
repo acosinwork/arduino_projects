@@ -1,7 +1,7 @@
 #include <QuadDisplay.h>
-#include <Scool.h>
+#include <School.h>
 
-#define TRESHOLD 0.8
+#define TRESHOLD 0.03
 
 bool positive = true;
 unsigned int showTime = 0;

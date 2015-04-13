@@ -2,7 +2,7 @@
 import processing.serial.*;
 Serial port;
 float nextValue = 0;
-int sizeRect = 500;
+int sizeRect = 1000;
 
 String s;
 
@@ -11,7 +11,7 @@ FloatList oscill;
 void setup()
 {
   size(sizeRect, sizeRect);
-  port = new Serial(this, "COM61", 115200);
+  port = new Serial(this, "COM4", 115200);
   port.bufferUntil('\n');  
   oscill = new FloatList();
   s = new String("no data");
