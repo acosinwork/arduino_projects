@@ -2,6 +2,7 @@
 #define ROBOT_H
 
 #include <inttypes.h>
+#include <Strela.h>
 
 class Robot {
 
@@ -14,10 +15,20 @@ class Robot {
 
 		void stop();
 
+		void acceleration(int8_t accel);
+
 		virtual void run();
 
 	protected:
 		begin();
+
+    private:
+
+
+    	uint8_t _acceleration;
+
+    	uint8_t _currentSpeed;
+
 
 };
 
