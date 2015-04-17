@@ -136,8 +136,6 @@ namespace {
 		tone(BUZZER, MT_CB_TONE, 50);
 		delay(100);
 		tone(BUZZER, MT_CB_TONE, 50);
-		
-		/*TODO*/
 	}
 
 
