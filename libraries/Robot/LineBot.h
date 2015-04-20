@@ -4,6 +4,12 @@
 #include <inttypes.h>
 #include <Robot.h>
 
+class LineBot : public Robot
+{
+	LineBot();
 
+	void begin();
+
+};
 
 #endif
