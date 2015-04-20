@@ -25,6 +25,7 @@ class Robot {
 //		virtual void run();
 
 //	protected:
+
 		void begin();
 
     private:
