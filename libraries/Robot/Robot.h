@@ -7,9 +7,9 @@
 class Robot {
 
 	public:
-		void Robot();
+		Robot();
 
-		void speed(int motorLeft, motorRight);
+		void speed(int motorLeft, int motorRight);
 
 		void speed(int spd);
 
@@ -22,10 +22,10 @@ class Robot {
 
 		void acceleration(int8_t accel);
 */
-		virtual void run();
+//		virtual void run();
 
-	protected:
-		begin();
+//	protected:
+		void begin();
 
     private:
 
@@ -33,7 +33,7 @@ class Robot {
 
     	float motorsDiffMultiplier;
 
-    	void writeMotorsSpeed();
+    	void writeMotorsSpeed(int motorLeft, int motorRight);
 
 /*
     	uint8_t _acceleration;

@@ -1,3 +1,5 @@
+#include "Arduino.h"
+
 #include "Robot.h"
 #include <Strela.h>
 
@@ -6,21 +8,27 @@
 #define DEFAULT_ACCEL 50
 
 
-void Robot::Robot()
+Robot::Robot()
+{
+
+ 
+	/*TODO*/
+
+//	Robot::acceleration(DEFAULT_ACCEL);
+}
+
+void Robot::begin()
 {
 	strelaInitialize();
+
+	tone(BUZZER,1000,50);
 
 	MotorCalibration(_motorMaxSpeed);
 
 	if (_motorMaxSpeed[1] != 0) 
 		motorsDiffMultiplier = (float)_motorMaxSpeed[0] / _motorMaxSpeed[1];
 
-
-	/*TODO*/
-
-//	Robot::acceleration(DEFAULT_ACCEL);
 }
-
 
 void Robot::writeMotorsSpeed(int motorLeft, int motorRight)
 {
