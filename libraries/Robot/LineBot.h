@@ -4,11 +4,17 @@
 #include <inttypes.h>
 #include <Robot.h>
 
+#include <utility/LineSensor.h>
+
+
 class LineBot : public Robot
 {
-	LineBot();
+	public:
+		LineBot();
 
-	void begin();
+		LineSensor sensors;
+
+		void begin();
 
 };
 

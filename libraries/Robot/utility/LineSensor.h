@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include <vector>
 
 #define ROLE_WHITE = 0
 #define ROLE_BLACK = 1
@@ -32,14 +31,21 @@ class LineSensor
 class LineSensor
 	{
 	public:
-		LineSensor();
+//		LineSensor();
 
 		uint8_t attach(uint8_t pin);
 
 		int read(uint8_t sensor);
 		int readOnce(uint8_t sensor);
 
+		void setWhite(uint8_t sensor);
+		void setBlack(uint8_t sensor);
 
+		uint8_t readPct(uint8_t sensor);
+		
+
+
+		uint8_t count();
 
 	private:
 
@@ -50,7 +56,7 @@ class LineSensor
 	        bool role;
 		};
 
-		const maxSensorsCount = MAX_SENSORS_COUNT;
+		const uint8_t maxSensorsCount = MAX_SENSORS_COUNT;
 		LineSensor::Sensor _sensors[MAX_SENSORS_COUNT];
 		uint8_t _usedSensCount = 0;
 	

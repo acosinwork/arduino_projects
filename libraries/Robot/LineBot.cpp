@@ -5,14 +5,24 @@
 #include <Strela.h>
 
 
-void LineBot::begin{
+LineBot::LineBot()
+{
+
+}
+
+
+void LineBot::begin() 
+{
 	Robot::begin();
 
 
-	for (int i=0; i< 10; ++i)
-	{
-		tone(BUZZER)
-	}
+
+
+	// for (int i=0; i< 10; ++i)
+	// {
+	// 	tone(BUZZER, 200, 100);
+	// 	delay(500);
+	// }
 
 
 }
