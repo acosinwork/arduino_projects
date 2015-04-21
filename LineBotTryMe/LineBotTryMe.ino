@@ -76,7 +76,7 @@ void loop() {
   int u = constrain( kp * offset +
       ki * (integral) +
       kd * (offset - oldOffset),
-      - POWER_FORWARD, POWER_FORWARD);
+      - POWER_FORWARD/2, POWER_FORWARD/2);
 
   // Расчет уменьшения мощности для торможения на
   // поворотах. Чем больше значение управляющего
