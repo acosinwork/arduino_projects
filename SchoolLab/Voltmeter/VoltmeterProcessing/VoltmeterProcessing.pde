@@ -10,48 +10,48 @@ FloatList oscill;
 
 void setup()
 {
-  size(sizeRect, sizeRect);
-  port = new Serial(this, "COM4", 115200);
+  size(1000, 1000);
+  port = new Serial(this, "COM10", 115200); //
   port.bufferUntil('\n');  
   oscill = new FloatList();
   s = new String("no data");
-  textSize(18);
-
+  //  textSize(18);
 }
 
 void draw()
 {
   background(0);
   stroke(255);
-  
-  text(s, 10, 30);
-  
-  for (int i=0; i<oscill.size()-2; ++i) {
-    line(i, (sizeRect-(oscill.get(i)*sizeRect/5)), i+1, (sizeRect-(oscill.get(i+1)*sizeRect/5)));
+
+  for (int i = 1; i< oscill.size(); ++i) {
+    line(i-1, 1000-oscill.get(i-1), i, 1000-oscill.get(i));
   }
+
+  text(s, 10, 30);
 }
-  
+
 void serialEvent (Serial port)
 {
   try {
-  nextValue = float(port.readStringUntil('\n'));
-  
-  s= nextValue + " V";
- 
-  
-  if (!(oscill.size()<sizeRect)) {
-    oscill.remove(0);
-  }
+    s = port.readStringUntil('\n');
 
-  oscill.append(nextValue);
-  } catch (Exception e) {
+    //  s= nextValue + " V";
+    
+    nextValue = float(s);
+
+
+    if (!(oscill.size()<sizeRect)) {
+      oscill.remove(0);
+    }
+
+    oscill.append(nextValue);
+  } 
+  catch (Exception e) {
     println("Connection...");
   }
-   
 }
 
 void stop() {
   port.clear();
   port.stop();
 } 
-

@@ -7,7 +7,6 @@
 
 unsigned long timetimetime = 0;
 
-
 int power = 150;//90;
 
 const double multiplier = 3.0 / 1024;
