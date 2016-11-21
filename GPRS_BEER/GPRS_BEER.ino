@@ -14,7 +14,7 @@
 #define ROTATE_SPEED_TRESHOLD 10
 
 #define OUTCOMING_CALL_TIMEOUT 5000
-#define OUTCOMING_CALL_TRESHOLD 800
+#define OUTCOMING_CALL_TRESHOLD 500
 
 #define INDICATOR_PIN 13
 
@@ -24,7 +24,7 @@ char incomingPhoneNumber[GPRS_BUFFER_LENGTH];
 
 // создаём объект класса GPRS и передаём ему скорость 9600 бод
 // с помощью него будем давать команды GPRS шилду
-  GPRS gprs(6, 5, 9600);
+GPRS gprs(6, 5, 9600);
 
 
 // создаём объект для работы с гироскопом
@@ -41,30 +41,33 @@ void setup()
   //настраиваем пин №13 в режим выхода,
   pinMode(INDICATOR_PIN, OUTPUT);
   // подаём на пин 13 «низкий уровень»
-  digitalWrite(INDICATOR_PIN, LOW);
   // включаем GPRS шилд
   gprs.powerUpDown();
   // открываем последовательный порт для мониторинга действий в программе
-/*  Serial.begin(9600);
-  while (!Serial) {
-    // ждём, пока не откроется монитор последовательного порта
-    // для того, чтобы отследить все события в программе
-  }
-*/
+  /*  Serial.begin(9600);
+    while (!Serial) {
+      // ждём, пока не откроется монитор последовательного порта
+      // для того, чтобы отследить все события в программе
+    }
+  */
   // проверяем есть ли связь с GPRS устройством
   while (!gprs.init()) {
+    digitalWrite(INDICATOR_PIN, !digitalRead(INDICATOR_PIN)); // завелся ли шилд?
+
     // если связи нет, ждём 1 секунду
     // и выводим сообщение об ошибке
     // процесс повторяется в цикле,
     // пока не появится ответ от GPRS устройства
     delay(1000);
-//    Serial.print("Init error\r\n");
+    //    Serial.print("Init error\r\n");
   }
-/*  // вывод об удачной инициализации GPRS Shield
-  Serial.println("GPRS init success");
-  // сообщаем об ожидании звонка
-  Serial.println("Wait to call ");
-*/
+  digitalWrite(INDICATOR_PIN, LOW);
+
+  /*  // вывод об удачной инициализации GPRS Shield
+    Serial.println("GPRS init success");
+    // сообщаем об ожидании звонка
+    Serial.println("Wait to call ");
+  */
   //Запускаем гироскоп
   gyro.begin();
 
@@ -93,7 +96,7 @@ void incomingCall()
     // зажечь встроенный на Iskra светодиод
     digitalWrite(INDICATOR_PIN, HIGH);
     // выводим сообщение о входящем вызове
-//    Serial.println("Incoming call");
+    //    Serial.println("Incoming call");
 
     gprs.isCallActive(incomingPhoneNumber);
 
@@ -103,13 +106,13 @@ void incomingCall()
       gprs.answer();
       // выводим сообщение о начале разговора
       delay(1000);
-//      Serial.println("Call a conversation");
+      //      Serial.println("Call a conversation");
 
       calling();
 
     } else {
       gprs.callEnd();
-//      Serial.println("Call over");
+      //      Serial.println("Call over");
     }
   }
 }
@@ -136,17 +139,16 @@ bool gyroCall()
 
 void calling()
 {
-  uint8_t counter = 0;
   while (!gprs.ifcallEnd()) {
     // моргаем и ждём пока месть абонент не положит трубку
-    counter+=17;
-    analogWrite(INDICATOR_PIN, counter);
-    delay(1);
+    digitalWrite(INDICATOR_PIN, HIGH);
+    delay(50);
+    digitalWrite(INDICATOR_PIN, LOW);
+    delay(200);
+    digitalWrite(INDICATOR_PIN, HIGH);
+    delay(50);
+    digitalWrite(INDICATOR_PIN, LOW);
   }
-  // выводим сообщение о конце разговора
-//  Serial.println("Call over");
-  // гасим светодиод
-  digitalWrite(INDICATOR_PIN, LOW);
 }
 
 

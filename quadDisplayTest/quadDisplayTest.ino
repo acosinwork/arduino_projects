@@ -2,12 +2,21 @@
 
 void setup()
 {
+  
+  pinMode(3,OUTPUT);
+  pinMode(6,OUTPUT);
+  pinMode(7,OUTPUT);
+  
+ 
 }
 
 void loop()
 {
-  for (int i = 0; i < NUM_DIGITAL_PINS; ++i) {
-    displayInt(i, i, true);
+  digitalWrite(3,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(7,HIGH);
+  
+ 
+    displayFloat(4, ((float)millis()/1000), true);
     delay(10);
-  }
 }

@@ -1,6 +1,6 @@
-#define YAXIS      A0
-#define XAXIS      A2
-#define MANIPULATE 5
+#define XAXIS_1      A1
+#define XAXIS_2      A3
+#define MANIPULATE 6
 
 #include <TimerOne.h>
 
@@ -41,16 +41,16 @@ void loop() {
     ++counter;
   }
 
-  yVal = 0b10000000 | (analogRead(YAXIS) >> 3);
-  xVal = 0b01111111 & (analogRead(XAXIS) >> 3);
+  yVal = 0b10000000 | (analogRead(XAXIS_1) >> 3);
+  xVal = 0b01111111 & (analogRead(XAXIS_2) >> 3);
 
 }
 
 void timerIsr()
 {
-  if ((PIND & _BV(5)) == _BV(5))
-    PORTD &= ~_BV(5); //pin 5 LOW
+  if ((PIND & _BV(MANIPULATE)) == _BV(MANIPULATE))
+    PORTD &= ~_BV(MANIPULATE); //pin 5 LOW
   else
-    PORTD |= _BV(5); //pin 5 HIGH
+    PORTD |= _BV(MANIPULATE); //pin 5 HIGH
 }
 
