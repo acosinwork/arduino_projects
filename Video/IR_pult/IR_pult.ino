@@ -49,8 +49,8 @@ void loop() {
 void timerIsr()
 {
   if ((PIND & _BV(MANIPULATE)) == _BV(MANIPULATE))
-    PORTD &= ~_BV(MANIPULATE); //pin 5 LOW
+    PORTD &= ~_BV(MANIPULATE); //pin MANIPULATE LOW
   else
-    PORTD |= _BV(MANIPULATE); //pin 5 HIGH
+    PORTD |= _BV(MANIPULATE); //pin MANIPULATE HIGH
 }
 

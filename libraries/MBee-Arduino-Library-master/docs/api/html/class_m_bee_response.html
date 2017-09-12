@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс MBeeResponse</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="MBee.png"/></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="class_m_bee_response-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс MBeeResponse</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Супер класс для всех пакетов, передаваемых по UART модулями MBee-868-x.0 в проекте <a class="el" href="class_serial_star.html" title="Класс для проекта SerialStar диапазона 868 МГц. ">SerialStar</a>.  
+ <a href="class_m_bee_response.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_serial_star_8h_source.html">SerialStar.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:MBeeResponse:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_m_bee_response.png" usemap="#MBeeResponse_map" alt=""/>
+  <map id="MBeeResponse_map" name="MBeeResponse_map">
+<area href="class_frame_id_response.html" title="Класс расширяет базовый класс MBeeResponse для всех сообщений, которые имеют поле frame id..." alt="FrameIdResponse" shape="rect" coords="92,56,267,80"/>
+<area href="class_modem_status_response.html" title="Класс для API-фрейма со статусом модема после инициализации. " alt="ModemStatusResponse" shape="rect" coords="277,56,452,80"/>
+<area href="class_rx_common_response.html" title="Базовый класс для всех пакетов, принятых по эфиру и передаваемых модулем на UART. ..." alt="RxCommonResponse" shape="rect" coords="555,56,730,80"/>
+<area href="class_at_command_response.html" title="Класс для ответа на локальный командный API-фрейм. " alt="AtCommandResponse" shape="rect" coords="0,112,175,136"/>
+<area href="class_tx_status_response.html" title="Класс для локального ответа модуля со статусом передачи в эфир или размещением в буфере. " alt="TxStatusResponse" shape="rect" coords="185,112,360,136"/>
+<area href="class_remote_at_command_response.html" title="Класс для ответа на командный API-фрейм для удаленного узла. " alt="RemoteAtCommandResponse" shape="rect" coords="370,112,545,136"/>
+<area href="class_rx_acknowledge_response.html" title="Класс для пакета с подтверждением получения неструктурированных данных удаленным модемом. " alt="RxAcknowledgeResponse" shape="rect" coords="555,112,730,136"/>
+<area href="class_rx_data_response.html" title="Класс для всех пакетов, принятых по эфиру, передаваемых модулем на UART и содержащих поле данных..." alt="RxDataResponse" shape="rect" coords="740,112,915,136"/>
+<area href="class_rx_io_sample_response.html" alt="RxIoSampleResponse" shape="rect" coords="647,168,822,192"/>
+<area href="class_rx_response.html" title="Класс для выдачи в UART принятых по эфиру пакетов, содержаших неструктированные данные. " alt="RxResponse" shape="rect" coords="832,168,1007,192"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a310b3085e6e9f7e539cc216996de86e5"><td class="memItemLeft" align="right" valign="top"><a id="a310b3085e6e9f7e539cc216996de86e5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a310b3085e6e9f7e539cc216996de86e5">MBeeResponse</a> ()</td></tr>
+<tr class="memdesc:a310b3085e6e9f7e539cc216996de86e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор "по умолчанию". <br /></td></tr>
+<tr class="separator:a310b3085e6e9f7e539cc216996de86e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad49762766ee2949febaca77f068d1f2"><td class="memItemLeft" align="right" valign="top"><a id="aad49762766ee2949febaca77f068d1f2"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2">getApiId</a> ()</td></tr>
+<tr class="memdesc:aad49762766ee2949febaca77f068d1f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает тип API-фрейма. <br /></td></tr>
+<tr class="separator:aad49762766ee2949febaca77f068d1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c9e43f33f1d4f05b21fb91a78fa264f"><td class="memItemLeft" align="right" valign="top"><a id="a5c9e43f33f1d4f05b21fb91a78fa264f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setApiId</b> (uint8_t apiId)</td></tr>
+<tr class="separator:a5c9e43f33f1d4f05b21fb91a78fa264f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91e669f875f0f8ebe467d67b58c7db04"><td class="memItemLeft" align="right" valign="top"><a id="a91e669f875f0f8ebe467d67b58c7db04"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a91e669f875f0f8ebe467d67b58c7db04">getMsbLength</a> ()</td></tr>
+<tr class="memdesc:a91e669f875f0f8ebe467d67b58c7db04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает MSB длины поля данных. <br /></td></tr>
+<tr class="separator:a91e669f875f0f8ebe467d67b58c7db04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a973bea5ea2891f499cc96d76d19bfe2d"><td class="memItemLeft" align="right" valign="top"><a id="a973bea5ea2891f499cc96d76d19bfe2d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setMsbLength</b> (uint8_t msbLength)</td></tr>
+<tr class="separator:a973bea5ea2891f499cc96d76d19bfe2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233746339c814c34b1afad74c10c5aac"><td class="memItemLeft" align="right" valign="top"><a id="a233746339c814c34b1afad74c10c5aac"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a233746339c814c34b1afad74c10c5aac">getLsbLength</a> ()</td></tr>
+<tr class="memdesc:a233746339c814c34b1afad74c10c5aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает LSB длины поля данных. <br /></td></tr>
+<tr class="separator:a233746339c814c34b1afad74c10c5aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e8e78ad58df40dee3fc1ea0c21c58b0"><td class="memItemLeft" align="right" valign="top"><a id="a4e8e78ad58df40dee3fc1ea0c21c58b0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setLsbLength</b> (uint8_t lsbLength)</td></tr>
+<tr class="separator:a4e8e78ad58df40dee3fc1ea0c21c58b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18400100db6b478b555e223ff70b8cad"><td class="memItemLeft" align="right" valign="top"><a id="a18400100db6b478b555e223ff70b8cad"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a18400100db6b478b555e223ff70b8cad">getChecksum</a> ()</td></tr>
+<tr class="memdesc:a18400100db6b478b555e223ff70b8cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подсчет контрольной суммы. <br /></td></tr>
+<tr class="separator:a18400100db6b478b555e223ff70b8cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8be37db848f5d40dfea0d71260b6645"><td class="memItemLeft" align="right" valign="top"><a id="ac8be37db848f5d40dfea0d71260b6645"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#ac8be37db848f5d40dfea0d71260b6645">setChecksum</a> (uint8_t checksum)</td></tr>
+<tr class="memdesc:ac8be37db848f5d40dfea0d71260b6645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запись контрольной суммы в соответствующее поле пакета. <br /></td></tr>
+<tr class="separator:ac8be37db848f5d40dfea0d71260b6645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1f374f59c76aa849d4f7ef0d1b63e5"><td class="memItemLeft" align="right" valign="top"><a id="a6e1f374f59c76aa849d4f7ef0d1b63e5"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a6e1f374f59c76aa849d4f7ef0d1b63e5">getFrameDataLength</a> ()</td></tr>
+<tr class="memdesc:a6e1f374f59c76aa849d4f7ef0d1b63e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает длину данных в пакете между полем типа API-фрейма и контрольной суммой. <br /></td></tr>
+<tr class="separator:a6e1f374f59c76aa849d4f7ef0d1b63e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4cb42bc20598d3ec5f4c97ceb55d3d3"><td class="memItemLeft" align="right" valign="top"><a id="aa4cb42bc20598d3ec5f4c97ceb55d3d3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#aa4cb42bc20598d3ec5f4c97ceb55d3d3">setFrameLength</a> (uint8_t frameLength)</td></tr>
+<tr class="memdesc:aa4cb42bc20598d3ec5f4c97ceb55d3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запись поля длины в пакете. <br /></td></tr>
+<tr class="separator:aa4cb42bc20598d3ec5f4c97ceb55d3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65223ca4421e27337466356a3863dfa9"><td class="memItemLeft" align="right" valign="top"><a id="a65223ca4421e27337466356a3863dfa9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a65223ca4421e27337466356a3863dfa9">setFrameData</a> (uint8_t *frameDataPtr)</td></tr>
+<tr class="memdesc:a65223ca4421e27337466356a3863dfa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает указатель на поле данных пакета. <br /></td></tr>
+<tr class="separator:a65223ca4421e27337466356a3863dfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6016827d971852af20a82568ccdfde2c"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a6016827d971852af20a82568ccdfde2c">getFrameData</a> ()</td></tr>
+<tr class="memdesc:a6016827d971852af20a82568ccdfde2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает указатель на буфер, который содержит сообщение.  <a href="#a6016827d971852af20a82568ccdfde2c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6016827d971852af20a82568ccdfde2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a7d9d02b4d4b0b63c46e9d795a142a"><td class="memItemLeft" align="right" valign="top"><a id="a21a7d9d02b4d4b0b63c46e9d795a142a"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a21a7d9d02b4d4b0b63c46e9d795a142a">getPacketLength</a> ()</td></tr>
+<tr class="memdesc:a21a7d9d02b4d4b0b63c46e9d795a142a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает длину пакета. <br /></td></tr>
+<tr class="separator:a21a7d9d02b4d4b0b63c46e9d795a142a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a348cedf705160282020e8117b55c0f78"><td class="memItemLeft" align="right" valign="top"><a id="a348cedf705160282020e8117b55c0f78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a348cedf705160282020e8117b55c0f78">reset</a> ()</td></tr>
+<tr class="memdesc:a348cedf705160282020e8117b55c0f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает все поля пакета. <br /></td></tr>
+<tr class="separator:a348cedf705160282020e8117b55c0f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e07263239cb70a7a7c83d1be793f208"><td class="memItemLeft" align="right" valign="top"><a id="a7e07263239cb70a7a7c83d1be793f208"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a7e07263239cb70a7a7c83d1be793f208">init</a> ()</td></tr>
+<tr class="memdesc:a7e07263239cb70a7a7c83d1be793f208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация пакета. <br /></td></tr>
+<tr class="separator:a7e07263239cb70a7a7c83d1be793f208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cfb34b4e7f220c0c52bfd51905a6a49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a2cfb34b4e7f220c0c52bfd51905a6a49">getTxStatusResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:a2cfb34b4e7f220c0c52bfd51905a6a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_tx_status_response.html" title="Класс для локального ответа модуля со статусом передачи в эфир или размещением в буфере. ">TxStatusResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == TRANSMIT_STATUS_API_FRAME 0x8B(ex.  <a href="#a2cfb34b4e7f220c0c52bfd51905a6a49">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2cfb34b4e7f220c0c52bfd51905a6a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5831b15a368a79626a036c0bc37c2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a6c5831b15a368a79626a036c0bc37c2c">getRxResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:a6c5831b15a368a79626a036c0bc37c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_rx_response.html" title="Класс для выдачи в UART принятых по эфиру пакетов, содержаших неструктированные данные. ">RxResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == RECEIVE_PACKET_API_FRAME 0x81(ex.  <a href="#a6c5831b15a368a79626a036c0bc37c2c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6c5831b15a368a79626a036c0bc37c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e98de17ac18b787110e6d056fc8c84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#aa1e98de17ac18b787110e6d056fc8c84">getRxIoSampleResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:aa1e98de17ac18b787110e6d056fc8c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_rx_io_sample_response.html">RxIoSampleResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == IO_DATA_SAMPLE_API_FRAME 0x83 (ex.  <a href="#aa1e98de17ac18b787110e6d056fc8c84">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa1e98de17ac18b787110e6d056fc8c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4bbbab9f051c66952b55e4feed142f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#ace4bbbab9f051c66952b55e4feed142f">getModemStatusResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:ace4bbbab9f051c66952b55e4feed142f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_modem_status_response.html" title="Класс для API-фрейма со статусом модема после инициализации. ">ModemStatusResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == MODEM_STATUS_API_FRAME 0x8A (ex.  <a href="#ace4bbbab9f051c66952b55e4feed142f">Подробнее...</a><br /></td></tr>
+<tr class="separator:ace4bbbab9f051c66952b55e4feed142f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f83eb3ed2b6220649b44aa1ce9f4d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a60f83eb3ed2b6220649b44aa1ce9f4d0">getAtCommandResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;responses)</td></tr>
+<tr class="memdesc:a60f83eb3ed2b6220649b44aa1ce9f4d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_at_command_response.html" title="Класс для ответа на локальный командный API-фрейм. ">AtCommandResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == AT_COMMAND_RESPONSE_API_FRAME 0x88 (ex.  <a href="#a60f83eb3ed2b6220649b44aa1ce9f4d0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a60f83eb3ed2b6220649b44aa1ce9f4d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37a4530661d7125225162367914fdd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#af37a4530661d7125225162367914fdd2">getRemoteAtCommandResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:af37a4530661d7125225162367914fdd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_remote_at_command_response.html" title="Класс для ответа на командный API-фрейм для удаленного узла. ">RemoteAtCommandResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == REMOTE_AT_COMMAND_RESPONSE_API_FRAME 0x97 (ex.  <a href="#af37a4530661d7125225162367914fdd2">Подробнее...</a><br /></td></tr>
+<tr class="separator:af37a4530661d7125225162367914fdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c03da381c2a0bbf2e3d94a0cee03e2b"><td class="memItemLeft" align="right" valign="top"><a id="a8c03da381c2a0bbf2e3d94a0cee03e2b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a8c03da381c2a0bbf2e3d94a0cee03e2b">getRxAcknowledgeResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:a8c03da381c2a0bbf2e3d94a0cee03e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_rx_acknowledge_response.html" title="Класс для пакета с подтверждением получения неструктурированных данных удаленным модемом. ">RxAcknowledgeResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == REMOTE_ACKNOWLEDGE_API_FRAME 0x8C. <br /></td></tr>
+<tr class="separator:a8c03da381c2a0bbf2e3d94a0cee03e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea8db056f9a9bf8e14f3e03fd393fa3"><td class="memItemLeft" align="right" valign="top"><a id="a4ea8db056f9a9bf8e14f3e03fd393fa3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a4ea8db056f9a9bf8e14f3e03fd393fa3">isAvailable</a> ()</td></tr>
+<tr class="memdesc:a4ea8db056f9a9bf8e14f3e03fd393fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true, если пакет успешно принят. <br /></td></tr>
+<tr class="separator:a4ea8db056f9a9bf8e14f3e03fd393fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b8f106c62a380d15294b29a3fc5e78d"><td class="memItemLeft" align="right" valign="top"><a id="a2b8f106c62a380d15294b29a3fc5e78d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a2b8f106c62a380d15294b29a3fc5e78d">setAvailable</a> (bool complete)</td></tr>
+<tr class="memdesc:a2b8f106c62a380d15294b29a3fc5e78d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает признак доступности пакета. <br /></td></tr>
+<tr class="separator:a2b8f106c62a380d15294b29a3fc5e78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e7949d9761a6e12495d6cd9cbaa770"><td class="memItemLeft" align="right" valign="top"><a id="aa6e7949d9761a6e12495d6cd9cbaa770"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#aa6e7949d9761a6e12495d6cd9cbaa770">isError</a> ()</td></tr>
+<tr class="memdesc:aa6e7949d9761a6e12495d6cd9cbaa770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true если при разборе пакета произошли ошибки. <br /></td></tr>
+<tr class="separator:aa6e7949d9761a6e12495d6cd9cbaa770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9576bb06e8cc3ea30ab47cdfe06dc060"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a9576bb06e8cc3ea30ab47cdfe06dc060">getErrorCode</a> ()</td></tr>
+<tr class="memdesc:a9576bb06e8cc3ea30ab47cdfe06dc060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает код ошибки или 0, если их нет.  <a href="#a9576bb06e8cc3ea30ab47cdfe06dc060">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9576bb06e8cc3ea30ab47cdfe06dc060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941ceab84bd2b61808835dc91a80e0a4"><td class="memItemLeft" align="right" valign="top"><a id="a941ceab84bd2b61808835dc91a80e0a4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a941ceab84bd2b61808835dc91a80e0a4">setErrorCode</a> (uint8_t errorCode)</td></tr>
+<tr class="memdesc:a941ceab84bd2b61808835dc91a80e0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает код ошибки. <br /></td></tr>
+<tr class="separator:a941ceab84bd2b61808835dc91a80e0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a23ae6fcafd63331f347d11121efa8fcc"><td class="memItemLeft" align="right" valign="top"><a id="a23ae6fcafd63331f347d11121efa8fcc"></a>
+uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>_frameDataPtr</b></td></tr>
+<tr class="separator:a23ae6fcafd63331f347d11121efa8fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Супер класс для всех пакетов, передаваемых по UART модулями MBee-868-x.0 в проекте <a class="el" href="class_serial_star.html" title="Класс для проекта SerialStar диапазона 868 МГц. ">SerialStar</a>. </p>
+<p>Запрещается создавать объекты непосредственно этого класса. Необходимо использовать подклассы для соответствующих проектов. Для экономии памяти рекомендуется повторное использование объектов подклассов. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8h_source.html">SerialStar.h</a> строка <a class="el" href="_serial_star_8h_source.html#l00163">163</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="a60f83eb3ed2b6220649b44aa1ce9f4d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f83eb3ed2b6220649b44aa1ce9f4d0">&#9670;&nbsp;</a></span>getAtCommandResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MBeeResponse::getAtCommandResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;&#160;</td>
+          <td class="paramname"><em>responses</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вызов <a class="el" href="class_at_command_response.html" title="Класс для ответа на локальный командный API-фрейм. ">AtCommandResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == AT_COMMAND_RESPONSE_API_FRAME 0x88 (ex. </p>
+<p>AT_COMMAND_RESPONSE). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00128">128</a></p>
+
+</div>
+</div>
+<a id="a9576bb06e8cc3ea30ab47cdfe06dc060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9576bb06e8cc3ea30ab47cdfe06dc060">&#9670;&nbsp;</a></span>getErrorCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MBeeResponse::getErrorCode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает код ошибки или 0, если их нет. </p>
+<p>Возможные коды ошибок: CHECKSUM_FAILURE, PACKET_EXCEEDS_BYTE_ARRAY_LENGTH, UNEXPECTED_START_BYTE. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00150">150</a></p>
+
+</div>
+</div>
+<a id="a6016827d971852af20a82568ccdfde2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6016827d971852af20a82568ccdfde2c">&#9670;&nbsp;</a></span>getFrameData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * MBeeResponse::getFrameData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает указатель на буфер, который содержит сообщение. </p>
+<p>Первым байтом сообщения является байт, следующий непосредственно за байтом типа API-фрейма (API ID). Последним байтом является байт перед контрольной суммой. Такое трактование отличается от определения длины API-фрейма, которое включает в себя поле типа API-фрейма. Однако, поскольку формат каждого API-фрейма предполагает наличие на 4-ой позиции байта API ID, то смысла хранить его еще раз (а поле API ID хранится в особой переменной apiId) нет. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00072">72</a></p>
+
+</div>
+</div>
+<a id="ace4bbbab9f051c66952b55e4feed142f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace4bbbab9f051c66952b55e4feed142f">&#9670;&nbsp;</a></span>getModemStatusResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MBeeResponse::getModemStatusResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;&#160;</td>
+          <td class="paramname"><em>response</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вызов <a class="el" href="class_modem_status_response.html" title="Класс для API-фрейма со статусом модема после инициализации. ">ModemStatusResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == MODEM_STATUS_API_FRAME 0x8A (ex. </p>
+<p>MODEM_STATUS_RESPONSE). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00121">121</a></p>
+
+</div>
+</div>
+<a id="af37a4530661d7125225162367914fdd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af37a4530661d7125225162367914fdd2">&#9670;&nbsp;</a></span>getRemoteAtCommandResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MBeeResponse::getRemoteAtCommandResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;&#160;</td>
+          <td class="paramname"><em>response</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вызов <a class="el" href="class_remote_at_command_response.html" title="Класс для ответа на командный API-фрейм для удаленного узла. ">RemoteAtCommandResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == REMOTE_AT_COMMAND_RESPONSE_API_FRAME 0x97 (ex. </p>
+<p>REMOTE_AT_COMMAND_RESPONSE). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00175">175</a></p>
+
+</div>
+</div>
+<a id="aa1e98de17ac18b787110e6d056fc8c84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e98de17ac18b787110e6d056fc8c84">&#9670;&nbsp;</a></span>getRxIoSampleResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MBeeResponse::getRxIoSampleResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;&#160;</td>
+          <td class="paramname"><em>response</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вызов <a class="el" href="class_rx_io_sample_response.html">RxIoSampleResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == IO_DATA_SAMPLE_API_FRAME 0x83 (ex. </p>
+<p>RX_16_IO_RESPONSE). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00114">114</a></p>
+
+</div>
+</div>
+<a id="a6c5831b15a368a79626a036c0bc37c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5831b15a368a79626a036c0bc37c2c">&#9670;&nbsp;</a></span>getRxResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MBeeResponse::getRxResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;&#160;</td>
+          <td class="paramname"><em>response</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вызов <a class="el" href="class_rx_response.html" title="Класс для выдачи в UART принятых по эфиру пакетов, содержаших неструктированные данные. ">RxResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == RECEIVE_PACKET_API_FRAME 0x81(ex. </p>
+<p>RX_16_RESPONSE). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00107">107</a></p>
+
+</div>
+</div>
+<a id="a2cfb34b4e7f220c0c52bfd51905a6a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cfb34b4e7f220c0c52bfd51905a6a49">&#9670;&nbsp;</a></span>getTxStatusResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MBeeResponse::getTxStatusResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;&#160;</td>
+          <td class="paramname"><em>response</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вызов <a class="el" href="class_tx_status_response.html" title="Класс для локального ответа модуля со статусом передачи в эфир или размещением в буфере. ">TxStatusResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == TRANSMIT_STATUS_API_FRAME 0x8B(ex. </p>
+<p>ZB_TX_STATUS_RESPONSE). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00100">100</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>includes/<a class="el" href="_serial_star_8h_source.html">SerialStar.h</a></li>
+<li><a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

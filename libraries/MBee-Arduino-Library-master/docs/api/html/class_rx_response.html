@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс RxResponse</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="MBee.png"/></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="class_rx_response-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс RxResponse</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для выдачи в UART принятых по эфиру пакетов, содержаших неструктированные данные.  
+ <a href="class_rx_response.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_serial_star_8h_source.html">SerialStar.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:RxResponse:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_rx_response.png" usemap="#RxResponse_map" alt=""/>
+  <map id="RxResponse_map" name="RxResponse_map">
+<area href="class_rx_data_response.html" title="Класс для всех пакетов, принятых по эфиру, передаваемых модулем на UART и содержащих поле данных..." alt="RxDataResponse" shape="rect" coords="0,112,129,136"/>
+<area href="class_rx_common_response.html" title="Базовый класс для всех пакетов, принятых по эфиру и передаваемых модулем на UART. ..." alt="RxCommonResponse" shape="rect" coords="0,56,129,80"/>
+<area href="class_m_bee_response.html" title="Супер класс для всех пакетов, передаваемых по UART модулями MBee-868-x.0 в проекте SerialStar..." alt="MBeeResponse" shape="rect" coords="0,0,129,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a307b931e9e29984933627b7bda23ca69"><td class="memItemLeft" align="right" valign="top"><a id="a307b931e9e29984933627b7bda23ca69"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_response.html#a307b931e9e29984933627b7bda23ca69">RxResponse</a> ()</td></tr>
+<tr class="memdesc:a307b931e9e29984933627b7bda23ca69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор "по умолчанию". <br /></td></tr>
+<tr class="separator:a307b931e9e29984933627b7bda23ca69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3478a1ce5667aad315f6a6c218011a"><td class="memItemLeft" align="right" valign="top"><a id="add3478a1ce5667aad315f6a6c218011a"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_response.html#add3478a1ce5667aad315f6a6c218011a">getDataLength</a> ()</td></tr>
+<tr class="memdesc:add3478a1ce5667aad315f6a6c218011a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает длину поля данных пакета. <br /></td></tr>
+<tr class="separator:add3478a1ce5667aad315f6a6c218011a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37fd3ee455f2157fa3894e710e668409"><td class="memItemLeft" align="right" valign="top"><a id="a37fd3ee455f2157fa3894e710e668409"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_response.html#a37fd3ee455f2157fa3894e710e668409">getDataOffset</a> ()</td></tr>
+<tr class="memdesc:a37fd3ee455f2157fa3894e710e668409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает смещение поля данных относительно старшего байта адреса. <br /></td></tr>
+<tr class="separator:a37fd3ee455f2157fa3894e710e668409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86971f371baf516aedd59c001e85653a"><td class="memItemLeft" align="right" valign="top"><a id="a86971f371baf516aedd59c001e85653a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_response.html#a86971f371baf516aedd59c001e85653a">isAcknowledged</a> ()</td></tr>
+<tr class="memdesc:a86971f371baf516aedd59c001e85653a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true, если на принятый пакет было отправлено подтверждение. <br /></td></tr>
+<tr class="separator:a86971f371baf516aedd59c001e85653a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_rx_data_response"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_rx_data_response')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_rx_data_response.html">RxDataResponse</a></td></tr>
+<tr class="memitem:ad05c1534c487464d7ec707ed72f6eb20 inherit pub_methods_class_rx_data_response"><td class="memItemLeft" align="right" valign="top"><a id="ad05c1534c487464d7ec707ed72f6eb20"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_data_response.html#ad05c1534c487464d7ec707ed72f6eb20">RxDataResponse</a> ()</td></tr>
+<tr class="memdesc:ad05c1534c487464d7ec707ed72f6eb20 inherit pub_methods_class_rx_data_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор "по умолчанию". <br /></td></tr>
+<tr class="separator:ad05c1534c487464d7ec707ed72f6eb20 inherit pub_methods_class_rx_data_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4805d9fcbe63c8988a3273cfdd4275d9 inherit pub_methods_class_rx_data_response"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_data_response.html#a4805d9fcbe63c8988a3273cfdd4275d9">getData</a> (uint8_t index)</td></tr>
+<tr class="memdesc:a4805d9fcbe63c8988a3273cfdd4275d9 inherit pub_methods_class_rx_data_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает байт из поля данных принятого пакета в соответствии с номером, определяемом переменной index.  <a href="class_rx_data_response.html#a4805d9fcbe63c8988a3273cfdd4275d9">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4805d9fcbe63c8988a3273cfdd4275d9 inherit pub_methods_class_rx_data_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f858fe479a07c7122a8d414c60517e inherit pub_methods_class_rx_data_response"><td class="memItemLeft" align="right" valign="top"><a id="ae0f858fe479a07c7122a8d414c60517e"></a>
+uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_data_response.html#ae0f858fe479a07c7122a8d414c60517e">getData</a> ()</td></tr>
+<tr class="memdesc:ae0f858fe479a07c7122a8d414c60517e inherit pub_methods_class_rx_data_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает указатель на поле данных принятого пакета. <br /></td></tr>
+<tr class="separator:ae0f858fe479a07c7122a8d414c60517e inherit pub_methods_class_rx_data_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d3b9b4029d8e2e2d0f934f55a6a658 inherit pub_methods_class_rx_data_response"><td class="memItemLeft" align="right" valign="top"><a id="aa5d3b9b4029d8e2e2d0f934f55a6a658"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_data_response.html#aa5d3b9b4029d8e2e2d0f934f55a6a658">isAddressBroadcast</a> ()</td></tr>
+<tr class="memdesc:aa5d3b9b4029d8e2e2d0f934f55a6a658 inherit pub_methods_class_rx_data_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true, если принятый пакет был широковещательный. <br /></td></tr>
+<tr class="separator:aa5d3b9b4029d8e2e2d0f934f55a6a658 inherit pub_methods_class_rx_data_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_rx_common_response"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_rx_common_response')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_rx_common_response.html">RxCommonResponse</a></td></tr>
+<tr class="memitem:aaf643460298394b7122fe631cd2a022a inherit pub_methods_class_rx_common_response"><td class="memItemLeft" align="right" valign="top"><a id="aaf643460298394b7122fe631cd2a022a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_common_response.html#aaf643460298394b7122fe631cd2a022a">RxCommonResponse</a> ()</td></tr>
+<tr class="memdesc:aaf643460298394b7122fe631cd2a022a inherit pub_methods_class_rx_common_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор "по умолчанию". <br /></td></tr>
+<tr class="separator:aaf643460298394b7122fe631cd2a022a inherit pub_methods_class_rx_common_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38f78da4c9222f47235e0dad3947d2c3 inherit pub_methods_class_rx_common_response"><td class="memItemLeft" align="right" valign="top"><a id="a38f78da4c9222f47235e0dad3947d2c3"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_common_response.html#a38f78da4c9222f47235e0dad3947d2c3">getRemoteAddress</a> ()</td></tr>
+<tr class="memdesc:a38f78da4c9222f47235e0dad3947d2c3 inherit pub_methods_class_rx_common_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает адрес модема, отправившего пакет. <br /></td></tr>
+<tr class="separator:a38f78da4c9222f47235e0dad3947d2c3 inherit pub_methods_class_rx_common_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd7b9c3742ebee8a37ade34e804ca9f6 inherit pub_methods_class_rx_common_response"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_common_response.html#acd7b9c3742ebee8a37ade34e804ca9f6">getRssi</a> ()</td></tr>
+<tr class="memdesc:acd7b9c3742ebee8a37ade34e804ca9f6 inherit pub_methods_class_rx_common_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает RSSI на антенном входе модуля, зафиксированный в момент приема пакета.  <a href="class_rx_common_response.html#acd7b9c3742ebee8a37ade34e804ca9f6">Подробнее...</a><br /></td></tr>
+<tr class="separator:acd7b9c3742ebee8a37ade34e804ca9f6 inherit pub_methods_class_rx_common_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0138bb1580d3c012de0eb51a7fd5324 inherit pub_methods_class_rx_common_response"><td class="memItemLeft" align="right" valign="top"><a id="ab0138bb1580d3c012de0eb51a7fd5324"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_common_response.html#ab0138bb1580d3c012de0eb51a7fd5324">getOption</a> ()</td></tr>
+<tr class="memdesc:ab0138bb1580d3c012de0eb51a7fd5324 inherit pub_methods_class_rx_common_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает байт опций. <br /></td></tr>
+<tr class="separator:ab0138bb1580d3c012de0eb51a7fd5324 inherit pub_methods_class_rx_common_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_m_bee_response"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_m_bee_response')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_m_bee_response.html">MBeeResponse</a></td></tr>
+<tr class="memitem:a310b3085e6e9f7e539cc216996de86e5 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a310b3085e6e9f7e539cc216996de86e5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a310b3085e6e9f7e539cc216996de86e5">MBeeResponse</a> ()</td></tr>
+<tr class="memdesc:a310b3085e6e9f7e539cc216996de86e5 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор "по умолчанию". <br /></td></tr>
+<tr class="separator:a310b3085e6e9f7e539cc216996de86e5 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad49762766ee2949febaca77f068d1f2 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="aad49762766ee2949febaca77f068d1f2"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2">getApiId</a> ()</td></tr>
+<tr class="memdesc:aad49762766ee2949febaca77f068d1f2 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает тип API-фрейма. <br /></td></tr>
+<tr class="separator:aad49762766ee2949febaca77f068d1f2 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c9e43f33f1d4f05b21fb91a78fa264f inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a5c9e43f33f1d4f05b21fb91a78fa264f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setApiId</b> (uint8_t apiId)</td></tr>
+<tr class="separator:a5c9e43f33f1d4f05b21fb91a78fa264f inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91e669f875f0f8ebe467d67b58c7db04 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a91e669f875f0f8ebe467d67b58c7db04"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a91e669f875f0f8ebe467d67b58c7db04">getMsbLength</a> ()</td></tr>
+<tr class="memdesc:a91e669f875f0f8ebe467d67b58c7db04 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает MSB длины поля данных. <br /></td></tr>
+<tr class="separator:a91e669f875f0f8ebe467d67b58c7db04 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a973bea5ea2891f499cc96d76d19bfe2d inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a973bea5ea2891f499cc96d76d19bfe2d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setMsbLength</b> (uint8_t msbLength)</td></tr>
+<tr class="separator:a973bea5ea2891f499cc96d76d19bfe2d inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233746339c814c34b1afad74c10c5aac inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a233746339c814c34b1afad74c10c5aac"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a233746339c814c34b1afad74c10c5aac">getLsbLength</a> ()</td></tr>
+<tr class="memdesc:a233746339c814c34b1afad74c10c5aac inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает LSB длины поля данных. <br /></td></tr>
+<tr class="separator:a233746339c814c34b1afad74c10c5aac inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e8e78ad58df40dee3fc1ea0c21c58b0 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a4e8e78ad58df40dee3fc1ea0c21c58b0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setLsbLength</b> (uint8_t lsbLength)</td></tr>
+<tr class="separator:a4e8e78ad58df40dee3fc1ea0c21c58b0 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18400100db6b478b555e223ff70b8cad inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a18400100db6b478b555e223ff70b8cad"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a18400100db6b478b555e223ff70b8cad">getChecksum</a> ()</td></tr>
+<tr class="memdesc:a18400100db6b478b555e223ff70b8cad inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подсчет контрольной суммы. <br /></td></tr>
+<tr class="separator:a18400100db6b478b555e223ff70b8cad inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8be37db848f5d40dfea0d71260b6645 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="ac8be37db848f5d40dfea0d71260b6645"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#ac8be37db848f5d40dfea0d71260b6645">setChecksum</a> (uint8_t checksum)</td></tr>
+<tr class="memdesc:ac8be37db848f5d40dfea0d71260b6645 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запись контрольной суммы в соответствующее поле пакета. <br /></td></tr>
+<tr class="separator:ac8be37db848f5d40dfea0d71260b6645 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1f374f59c76aa849d4f7ef0d1b63e5 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a6e1f374f59c76aa849d4f7ef0d1b63e5"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a6e1f374f59c76aa849d4f7ef0d1b63e5">getFrameDataLength</a> ()</td></tr>
+<tr class="memdesc:a6e1f374f59c76aa849d4f7ef0d1b63e5 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает длину данных в пакете между полем типа API-фрейма и контрольной суммой. <br /></td></tr>
+<tr class="separator:a6e1f374f59c76aa849d4f7ef0d1b63e5 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4cb42bc20598d3ec5f4c97ceb55d3d3 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="aa4cb42bc20598d3ec5f4c97ceb55d3d3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#aa4cb42bc20598d3ec5f4c97ceb55d3d3">setFrameLength</a> (uint8_t frameLength)</td></tr>
+<tr class="memdesc:aa4cb42bc20598d3ec5f4c97ceb55d3d3 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запись поля длины в пакете. <br /></td></tr>
+<tr class="separator:aa4cb42bc20598d3ec5f4c97ceb55d3d3 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65223ca4421e27337466356a3863dfa9 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a65223ca4421e27337466356a3863dfa9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a65223ca4421e27337466356a3863dfa9">setFrameData</a> (uint8_t *frameDataPtr)</td></tr>
+<tr class="memdesc:a65223ca4421e27337466356a3863dfa9 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает указатель на поле данных пакета. <br /></td></tr>
+<tr class="separator:a65223ca4421e27337466356a3863dfa9 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6016827d971852af20a82568ccdfde2c inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a6016827d971852af20a82568ccdfde2c">getFrameData</a> ()</td></tr>
+<tr class="memdesc:a6016827d971852af20a82568ccdfde2c inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает указатель на буфер, который содержит сообщение.  <a href="class_m_bee_response.html#a6016827d971852af20a82568ccdfde2c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6016827d971852af20a82568ccdfde2c inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a7d9d02b4d4b0b63c46e9d795a142a inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a21a7d9d02b4d4b0b63c46e9d795a142a"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a21a7d9d02b4d4b0b63c46e9d795a142a">getPacketLength</a> ()</td></tr>
+<tr class="memdesc:a21a7d9d02b4d4b0b63c46e9d795a142a inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает длину пакета. <br /></td></tr>
+<tr class="separator:a21a7d9d02b4d4b0b63c46e9d795a142a inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a348cedf705160282020e8117b55c0f78 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a348cedf705160282020e8117b55c0f78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a348cedf705160282020e8117b55c0f78">reset</a> ()</td></tr>
+<tr class="memdesc:a348cedf705160282020e8117b55c0f78 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает все поля пакета. <br /></td></tr>
+<tr class="separator:a348cedf705160282020e8117b55c0f78 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e07263239cb70a7a7c83d1be793f208 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a7e07263239cb70a7a7c83d1be793f208"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a7e07263239cb70a7a7c83d1be793f208">init</a> ()</td></tr>
+<tr class="memdesc:a7e07263239cb70a7a7c83d1be793f208 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация пакета. <br /></td></tr>
+<tr class="separator:a7e07263239cb70a7a7c83d1be793f208 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cfb34b4e7f220c0c52bfd51905a6a49 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a2cfb34b4e7f220c0c52bfd51905a6a49">getTxStatusResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:a2cfb34b4e7f220c0c52bfd51905a6a49 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_tx_status_response.html" title="Класс для локального ответа модуля со статусом передачи в эфир или размещением в буфере. ">TxStatusResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == TRANSMIT_STATUS_API_FRAME 0x8B(ex.  <a href="class_m_bee_response.html#a2cfb34b4e7f220c0c52bfd51905a6a49">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2cfb34b4e7f220c0c52bfd51905a6a49 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5831b15a368a79626a036c0bc37c2c inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a6c5831b15a368a79626a036c0bc37c2c">getRxResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:a6c5831b15a368a79626a036c0bc37c2c inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_rx_response.html" title="Класс для выдачи в UART принятых по эфиру пакетов, содержаших неструктированные данные. ">RxResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == RECEIVE_PACKET_API_FRAME 0x81(ex.  <a href="class_m_bee_response.html#a6c5831b15a368a79626a036c0bc37c2c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6c5831b15a368a79626a036c0bc37c2c inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e98de17ac18b787110e6d056fc8c84 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#aa1e98de17ac18b787110e6d056fc8c84">getRxIoSampleResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:aa1e98de17ac18b787110e6d056fc8c84 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_rx_io_sample_response.html">RxIoSampleResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == IO_DATA_SAMPLE_API_FRAME 0x83 (ex.  <a href="class_m_bee_response.html#aa1e98de17ac18b787110e6d056fc8c84">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa1e98de17ac18b787110e6d056fc8c84 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4bbbab9f051c66952b55e4feed142f inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#ace4bbbab9f051c66952b55e4feed142f">getModemStatusResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:ace4bbbab9f051c66952b55e4feed142f inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_modem_status_response.html" title="Класс для API-фрейма со статусом модема после инициализации. ">ModemStatusResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == MODEM_STATUS_API_FRAME 0x8A (ex.  <a href="class_m_bee_response.html#ace4bbbab9f051c66952b55e4feed142f">Подробнее...</a><br /></td></tr>
+<tr class="separator:ace4bbbab9f051c66952b55e4feed142f inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f83eb3ed2b6220649b44aa1ce9f4d0 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a60f83eb3ed2b6220649b44aa1ce9f4d0">getAtCommandResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;responses)</td></tr>
+<tr class="memdesc:a60f83eb3ed2b6220649b44aa1ce9f4d0 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_at_command_response.html" title="Класс для ответа на локальный командный API-фрейм. ">AtCommandResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == AT_COMMAND_RESPONSE_API_FRAME 0x88 (ex.  <a href="class_m_bee_response.html#a60f83eb3ed2b6220649b44aa1ce9f4d0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a60f83eb3ed2b6220649b44aa1ce9f4d0 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37a4530661d7125225162367914fdd2 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#af37a4530661d7125225162367914fdd2">getRemoteAtCommandResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:af37a4530661d7125225162367914fdd2 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_remote_at_command_response.html" title="Класс для ответа на командный API-фрейм для удаленного узла. ">RemoteAtCommandResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == REMOTE_AT_COMMAND_RESPONSE_API_FRAME 0x97 (ex.  <a href="class_m_bee_response.html#af37a4530661d7125225162367914fdd2">Подробнее...</a><br /></td></tr>
+<tr class="separator:af37a4530661d7125225162367914fdd2 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c03da381c2a0bbf2e3d94a0cee03e2b inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a8c03da381c2a0bbf2e3d94a0cee03e2b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a8c03da381c2a0bbf2e3d94a0cee03e2b">getRxAcknowledgeResponse</a> (<a class="el" href="class_m_bee_response.html">MBeeResponse</a> &amp;response)</td></tr>
+<tr class="memdesc:a8c03da381c2a0bbf2e3d94a0cee03e2b inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов <a class="el" href="class_rx_acknowledge_response.html" title="Класс для пакета с подтверждением получения неструктурированных данных удаленным модемом. ">RxAcknowledgeResponse</a> при <a class="el" href="class_m_bee_response.html#aad49762766ee2949febaca77f068d1f2" title="Возвращает тип API-фрейма. ">getApiId()</a> == REMOTE_ACKNOWLEDGE_API_FRAME 0x8C. <br /></td></tr>
+<tr class="separator:a8c03da381c2a0bbf2e3d94a0cee03e2b inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea8db056f9a9bf8e14f3e03fd393fa3 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a4ea8db056f9a9bf8e14f3e03fd393fa3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a4ea8db056f9a9bf8e14f3e03fd393fa3">isAvailable</a> ()</td></tr>
+<tr class="memdesc:a4ea8db056f9a9bf8e14f3e03fd393fa3 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true, если пакет успешно принят. <br /></td></tr>
+<tr class="separator:a4ea8db056f9a9bf8e14f3e03fd393fa3 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b8f106c62a380d15294b29a3fc5e78d inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a2b8f106c62a380d15294b29a3fc5e78d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a2b8f106c62a380d15294b29a3fc5e78d">setAvailable</a> (bool complete)</td></tr>
+<tr class="memdesc:a2b8f106c62a380d15294b29a3fc5e78d inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает признак доступности пакета. <br /></td></tr>
+<tr class="separator:a2b8f106c62a380d15294b29a3fc5e78d inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e7949d9761a6e12495d6cd9cbaa770 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="aa6e7949d9761a6e12495d6cd9cbaa770"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#aa6e7949d9761a6e12495d6cd9cbaa770">isError</a> ()</td></tr>
+<tr class="memdesc:aa6e7949d9761a6e12495d6cd9cbaa770 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true если при разборе пакета произошли ошибки. <br /></td></tr>
+<tr class="separator:aa6e7949d9761a6e12495d6cd9cbaa770 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9576bb06e8cc3ea30ab47cdfe06dc060 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a9576bb06e8cc3ea30ab47cdfe06dc060">getErrorCode</a> ()</td></tr>
+<tr class="memdesc:a9576bb06e8cc3ea30ab47cdfe06dc060 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает код ошибки или 0, если их нет.  <a href="class_m_bee_response.html#a9576bb06e8cc3ea30ab47cdfe06dc060">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9576bb06e8cc3ea30ab47cdfe06dc060 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941ceab84bd2b61808835dc91a80e0a4 inherit pub_methods_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a941ceab84bd2b61808835dc91a80e0a4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_response.html#a941ceab84bd2b61808835dc91a80e0a4">setErrorCode</a> (uint8_t errorCode)</td></tr>
+<tr class="memdesc:a941ceab84bd2b61808835dc91a80e0a4 inherit pub_methods_class_m_bee_response"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает код ошибки. <br /></td></tr>
+<tr class="separator:a941ceab84bd2b61808835dc91a80e0a4 inherit pub_methods_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_m_bee_response"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_m_bee_response')"><img src="closed.png" alt="-"/>&#160;Защищенные данные унаследованные от <a class="el" href="class_m_bee_response.html">MBeeResponse</a></td></tr>
+<tr class="memitem:a23ae6fcafd63331f347d11121efa8fcc inherit pro_attribs_class_m_bee_response"><td class="memItemLeft" align="right" valign="top"><a id="a23ae6fcafd63331f347d11121efa8fcc"></a>
+uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>_frameDataPtr</b></td></tr>
+<tr class="separator:a23ae6fcafd63331f347d11121efa8fcc inherit pro_attribs_class_m_bee_response"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для выдачи в UART принятых по эфиру пакетов, содержаших неструктированные данные. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8h_source.html">SerialStar.h</a> строка <a class="el" href="_serial_star_8h_source.html#l00608">608</a></p>
+</div><hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>includes/<a class="el" href="_serial_star_8h_source.html">SerialStar.h</a></li>
+<li><a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

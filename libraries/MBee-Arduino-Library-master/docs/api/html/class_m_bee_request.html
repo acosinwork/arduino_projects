@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс MBeeRequest</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="MBee.png"/></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="class_m_bee_request-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс MBeeRequest<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Супер класс для всех пакетов, передаваемых от хоста к модулям MBee-868-x.0 в проекте <a class="el" href="class_serial_star.html" title="Класс для проекта SerialStar диапазона 868 МГц. ">SerialStar</a>.  
+ <a href="class_m_bee_request.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_serial_star_8h_source.html">SerialStar.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:MBeeRequest:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_m_bee_request.png" usemap="#MBeeRequest_map" alt=""/>
+  <map id="MBeeRequest_map" name="MBeeRequest_map">
+<area href="class_at_command_request.html" title="Класс для локального управления модулем с помощью API-фрейма. " alt="AtCommandRequest" shape="rect" coords="0,56,164,80"/>
+<area href="class_payload_request.html" title="Базовый класс для всех пакетов, предназначенных для передачи по эфиру неструктурированных данных..." alt="PayloadRequest" shape="rect" coords="174,56,338,80"/>
+<area href="class_remote_at_command_request.html" title="Класс для удаленного управления модулем с помощью API-фрейма. " alt="RemoteAtCommandRequest" shape="rect" coords="0,112,164,136"/>
+<area href="class_tx_request.html" title="Класс для пакета,предназначенного для передачи удаленному модему неструктурированных данных..." alt="TxRequest" shape="rect" coords="174,112,338,136"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a8e54cf862e13a917b8f12b9b7c6fc905"><td class="memItemLeft" align="right" valign="top"><a id="a8e54cf862e13a917b8f12b9b7c6fc905"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#a8e54cf862e13a917b8f12b9b7c6fc905">MBeeRequest</a> (uint8_t apiId, uint8_t frameId)</td></tr>
+<tr class="memdesc:a8e54cf862e13a917b8f12b9b7c6fc905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор, создающий фрейм с заданным API ID и идентификатором. <br /></td></tr>
+<tr class="separator:a8e54cf862e13a917b8f12b9b7c6fc905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa67167caa74a13813381ebf59191be1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#aa67167caa74a13813381ebf59191be1c">setFrameId</a> (uint8_t frameId)</td></tr>
+<tr class="memdesc:aa67167caa74a13813381ebf59191be1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает frame id.  <a href="#aa67167caa74a13813381ebf59191be1c">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa67167caa74a13813381ebf59191be1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4d9dd49cbbb57c10f17c851429f93c"><td class="memItemLeft" align="right" valign="top"><a id="afc4d9dd49cbbb57c10f17c851429f93c"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#afc4d9dd49cbbb57c10f17c851429f93c">getFrameId</a> ()</td></tr>
+<tr class="memdesc:afc4d9dd49cbbb57c10f17c851429f93c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает frame id. <br /></td></tr>
+<tr class="separator:afc4d9dd49cbbb57c10f17c851429f93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93b96db4cacb2afb6e10003e543180a"><td class="memItemLeft" align="right" valign="top"><a id="ad93b96db4cacb2afb6e10003e543180a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#ad93b96db4cacb2afb6e10003e543180a">setApiId</a> (uint8_t apiId)</td></tr>
+<tr class="memdesc:ad93b96db4cacb2afb6e10003e543180a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает тип API-фрейма. <br /></td></tr>
+<tr class="separator:ad93b96db4cacb2afb6e10003e543180a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c297e403a78c169bd68f64e9f07fda7"><td class="memItemLeft" align="right" valign="top"><a id="a2c297e403a78c169bd68f64e9f07fda7"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#a2c297e403a78c169bd68f64e9f07fda7">getApiId</a> ()</td></tr>
+<tr class="memdesc:a2c297e403a78c169bd68f64e9f07fda7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает тип API-фрейма. <br /></td></tr>
+<tr class="separator:a2c297e403a78c169bd68f64e9f07fda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac4fe7642f272322e33cf10a07d06ff4"><td class="memItemLeft" align="right" valign="top">virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#aac4fe7642f272322e33cf10a07d06ff4">getFrameData</a> (uint8_t pos)=0</td></tr>
+<tr class="memdesc:aac4fe7642f272322e33cf10a07d06ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает буфер, который содержит сообщение.  <a href="#aac4fe7642f272322e33cf10a07d06ff4">Подробнее...</a><br /></td></tr>
+<tr class="separator:aac4fe7642f272322e33cf10a07d06ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953ee1c85bdae933369a1b64c4186dbd"><td class="memItemLeft" align="right" valign="top"><a id="a953ee1c85bdae933369a1b64c4186dbd"></a>
+virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#a953ee1c85bdae933369a1b64c4186dbd">getFrameDataLength</a> ()=0</td></tr>
+<tr class="memdesc:a953ee1c85bdae933369a1b64c4186dbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает длину поля данных фрейма, не включая frame id или api id и checksum. <br /></td></tr>
+<tr class="separator:a953ee1c85bdae933369a1b64c4186dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Супер класс для всех пакетов, передаваемых от хоста к модулям MBee-868-x.0 в проекте <a class="el" href="class_serial_star.html" title="Класс для проекта SerialStar диапазона 868 МГц. ">SerialStar</a>. </p>
+<p>Запрещается создавать объекты непосредственно этого класса. Необходимо использовать подклассы для соответствующих проектов. Для экономии памяти рекомендуется повторное использование объектов подклассов. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8h_source.html">SerialStar.h</a> строка <a class="el" href="_serial_star_8h_source.html#l00638">638</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="aac4fe7642f272322e33cf10a07d06ff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac4fe7642f272322e33cf10a07d06ff4">&#9670;&nbsp;</a></span>getFrameData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint8_t MBeeRequest::getFrameData </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает буфер, который содержит сообщение. </p>
+<p>Первым байтом сообщения является байт, следующий непосредственно за байтом типа API-фрейма (API ID). Последним байтом является байт перед контрольной суммой. Такое трактование отличается от определения длины API-фрейма, которое включает в себя поле типа API-фрейма. Однако, поскольку формат каждого API-фрейма предполагает наличие на 4-ой позиции байта API ID, то смысла хранить его еще раз (а поле API ID хранится в особой переменной apiId) нет. </p>
+
+<p>Замещается в <a class="el" href="class_tx_request.html#aec6b178ed04326e0babcd0d1d6490837">TxRequest</a>, <a class="el" href="class_remote_at_command_request.html#a0e576cf564ebd5a82cb2ed05239a856a">RemoteAtCommandRequest</a> и <a class="el" href="class_at_command_request.html#aa4fc8f0c8404172cd5532f3d8e5564f2">AtCommandRequest</a>.</p>
+
+</div>
+</div>
+<a id="aa67167caa74a13813381ebf59191be1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa67167caa74a13813381ebf59191be1c">&#9670;&nbsp;</a></span>setFrameId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MBeeRequest::setFrameId </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>frameId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает frame id. </p>
+<p>Диапазон значений 1..255, чтобы получить ответ. Если установлен в 0, ответный фрейм не выдается. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00517">517</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>includes/<a class="el" href="_serial_star_8h_source.html">SerialStar.h</a></li>
+<li><a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс TxRequest</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="MBee.png"/></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="class_tx_request-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс TxRequest</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для пакета,предназначенного для передачи удаленному модему неструктурированных данных, которые будут отправлены им на последовательный интерфейс UART.  
+ <a href="class_tx_request.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_serial_star_8h_source.html">SerialStar.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:TxRequest:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_tx_request.png" usemap="#TxRequest_map" alt=""/>
+  <map id="TxRequest_map" name="TxRequest_map">
+<area href="class_payload_request.html" title="Базовый класс для всех пакетов, предназначенных для передачи по эфиру неструктурированных данных..." alt="PayloadRequest" shape="rect" coords="0,56,102,80"/>
+<area href="class_m_bee_request.html" title="Супер класс для всех пакетов, передаваемых от хоста к модулям MBee-868-x.0 в проекте SerialStar..." alt="MBeeRequest" shape="rect" coords="0,0,102,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a6010aeee295ce7d90a77da1817806504"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a6010aeee295ce7d90a77da1817806504">TxRequest</a> ()</td></tr>
+<tr class="memdesc:a6010aeee295ce7d90a77da1817806504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор "по умолчанию".  <a href="#a6010aeee295ce7d90a77da1817806504">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6010aeee295ce7d90a77da1817806504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a621128878dd809c5823c226c4841ec"><td class="memItemLeft" align="right" valign="top"><a id="a9a621128878dd809c5823c226c4841ec"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a9a621128878dd809c5823c226c4841ec">TxRequest</a> (uint16_t addr, uint8_t *payload, uint8_t payloadLength)</td></tr>
+<tr class="memdesc:a9a621128878dd809c5823c226c4841ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс для адресной отправки данных со значением frameId и опций передачи "по умолчанию". <br /></td></tr>
+<tr class="separator:a9a621128878dd809c5823c226c4841ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9aaf386033b2b1fc91b2fdd9c60fab8"><td class="memItemLeft" align="right" valign="top"><a id="ab9aaf386033b2b1fc91b2fdd9c60fab8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#ab9aaf386033b2b1fc91b2fdd9c60fab8">TxRequest</a> (uint16_t addr, uint8_t option, uint8_t *payload, uint8_t payloadLength, uint8_t frameId)</td></tr>
+<tr class="memdesc:ab9aaf386033b2b1fc91b2fdd9c60fab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс для адресной отправки пакета с заданным frameId и опциями передачи. <br /></td></tr>
+<tr class="separator:ab9aaf386033b2b1fc91b2fdd9c60fab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ababfe2a90858b2a1a789d80cfccee857"><td class="memItemLeft" align="right" valign="top"><a id="ababfe2a90858b2a1a789d80cfccee857"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#ababfe2a90858b2a1a789d80cfccee857">getRemoteAddress</a> ()</td></tr>
+<tr class="memdesc:ababfe2a90858b2a1a789d80cfccee857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает адрес получателя пакета. <br /></td></tr>
+<tr class="separator:ababfe2a90858b2a1a789d80cfccee857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefc7ebadd1e4d6fbbb0b2bc7e77783f9"><td class="memItemLeft" align="right" valign="top"><a id="aefc7ebadd1e4d6fbbb0b2bc7e77783f9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#aefc7ebadd1e4d6fbbb0b2bc7e77783f9">setRemoteAddress</a> (uint16_t remoteAddress)</td></tr>
+<tr class="memdesc:aefc7ebadd1e4d6fbbb0b2bc7e77783f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает адрес получателя пакета. <br /></td></tr>
+<tr class="separator:aefc7ebadd1e4d6fbbb0b2bc7e77783f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a4b32110fbfe20336e317cb4ca1832"><td class="memItemLeft" align="right" valign="top"><a id="a62a4b32110fbfe20336e317cb4ca1832"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a62a4b32110fbfe20336e317cb4ca1832">getOption</a> ()</td></tr>
+<tr class="memdesc:a62a4b32110fbfe20336e317cb4ca1832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает значение байта опций отправки пакета. <br /></td></tr>
+<tr class="separator:a62a4b32110fbfe20336e317cb4ca1832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a3491c6f4e26ad2731c3e2fb4c9be98"><td class="memItemLeft" align="right" valign="top"><a id="a2a3491c6f4e26ad2731c3e2fb4c9be98"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a2a3491c6f4e26ad2731c3e2fb4c9be98">setOption</a> (uint8_t option)</td></tr>
+<tr class="memdesc:a2a3491c6f4e26ad2731c3e2fb4c9be98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает опции отправки пакета. <br /></td></tr>
+<tr class="separator:a2a3491c6f4e26ad2731c3e2fb4c9be98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72c26bb19736616786f494945826332f"><td class="memItemLeft" align="right" valign="top"><a id="a72c26bb19736616786f494945826332f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a72c26bb19736616786f494945826332f">getOptionEnable</a> ()</td></tr>
+<tr class="memdesc:a72c26bb19736616786f494945826332f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true, если передача пакета осуществляется в соответствии с байтом опций и false, если в сответствии с настройками Device Mode (DM). <br /></td></tr>
+<tr class="separator:a72c26bb19736616786f494945826332f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c3eef3ee479dc433685dc7288e8a63"><td class="memItemLeft" align="right" valign="top"><a id="ac8c3eef3ee479dc433685dc7288e8a63"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#ac8c3eef3ee479dc433685dc7288e8a63">setOptionEnable</a> (bool optionEnable)</td></tr>
+<tr class="memdesc:ac8c3eef3ee479dc433685dc7288e8a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Включает/выключает передачу пакетов в соответствии с байтом опций. <br /></td></tr>
+<tr class="separator:ac8c3eef3ee479dc433685dc7288e8a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c55b1c92b789deab2b6c993f1ec78b4"><td class="memItemLeft" align="right" valign="top"><a id="a8c55b1c92b789deab2b6c993f1ec78b4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a8c55b1c92b789deab2b6c993f1ec78b4">getAcknowledge</a> ()</td></tr>
+<tr class="memdesc:a8c55b1c92b789deab2b6c993f1ec78b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true, если подтверждение удаленным модемом получения пакета включено. <br /></td></tr>
+<tr class="separator:a8c55b1c92b789deab2b6c993f1ec78b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b978fc409faeb302c5afde69d8fdd16"><td class="memItemLeft" align="right" valign="top"><a id="a6b978fc409faeb302c5afde69d8fdd16"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a6b978fc409faeb302c5afde69d8fdd16">setAcknowledge</a> (bool acknowledge)</td></tr>
+<tr class="memdesc:a6b978fc409faeb302c5afde69d8fdd16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Включает/выключает отправку подтверждения удаленным модемом получения пакета. <br /></td></tr>
+<tr class="separator:a6b978fc409faeb302c5afde69d8fdd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03bdb46e4d2700afddaa6796d8efa36"><td class="memItemLeft" align="right" valign="top"><a id="ab03bdb46e4d2700afddaa6796d8efa36"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#ab03bdb46e4d2700afddaa6796d8efa36">getCca</a> ()</td></tr>
+<tr class="memdesc:ab03bdb46e4d2700afddaa6796d8efa36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true, если при отправке пакетов включен режим CCA (Clear Channel Assessment). <br /></td></tr>
+<tr class="separator:ab03bdb46e4d2700afddaa6796d8efa36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0121c63e502ddd40bea5390b3d801c84"><td class="memItemLeft" align="right" valign="top"><a id="a0121c63e502ddd40bea5390b3d801c84"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a0121c63e502ddd40bea5390b3d801c84">setCca</a> (bool cca)</td></tr>
+<tr class="memdesc:a0121c63e502ddd40bea5390b3d801c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Включает/выключает режим CCA (Clear Channel Assessment) при отправке пакетов. <br /></td></tr>
+<tr class="separator:a0121c63e502ddd40bea5390b3d801c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4cb66597f02c97179a0514d17eaa51"><td class="memItemLeft" align="right" valign="top"><a id="a3e4cb66597f02c97179a0514d17eaa51"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a3e4cb66597f02c97179a0514d17eaa51">getEncryption</a> ()</td></tr>
+<tr class="memdesc:a3e4cb66597f02c97179a0514d17eaa51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true, если включен режим шифрования поля данных. <br /></td></tr>
+<tr class="separator:a3e4cb66597f02c97179a0514d17eaa51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49fdc1e081484e84582398465a637fe"><td class="memItemLeft" align="right" valign="top"><a id="af49fdc1e081484e84582398465a637fe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#af49fdc1e081484e84582398465a637fe">setEncryption</a> (bool encryption)</td></tr>
+<tr class="memdesc:af49fdc1e081484e84582398465a637fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Включает/выключает шифрование поля данных передаваемого пакета. <br /></td></tr>
+<tr class="separator:af49fdc1e081484e84582398465a637fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b694338fe71cba9383167d770cad6e5"><td class="memItemLeft" align="right" valign="top"><a id="a1b694338fe71cba9383167d770cad6e5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a1b694338fe71cba9383167d770cad6e5">getSleepingDevice</a> ()</td></tr>
+<tr class="memdesc:a1b694338fe71cba9383167d770cad6e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает true, если пакет предназначается для спящего модема. <br /></td></tr>
+<tr class="separator:a1b694338fe71cba9383167d770cad6e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583053442af5d67c0bc7222c38b37863"><td class="memItemLeft" align="right" valign="top"><a id="a583053442af5d67c0bc7222c38b37863"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#a583053442af5d67c0bc7222c38b37863">setSleepingDevice</a> (bool sleepingDevice)</td></tr>
+<tr class="memdesc:a583053442af5d67c0bc7222c38b37863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Включает/выключает буферизацию пакетов для спящих модемов. <br /></td></tr>
+<tr class="separator:a583053442af5d67c0bc7222c38b37863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6b178ed04326e0babcd0d1d6490837"><td class="memItemLeft" align="right" valign="top"><a id="aec6b178ed04326e0babcd0d1d6490837"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#aec6b178ed04326e0babcd0d1d6490837">getFrameData</a> (uint8_t pos)</td></tr>
+<tr class="memdesc:aec6b178ed04326e0babcd0d1d6490837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает байт поля данных, номер которого определяется аргументом. <br /></td></tr>
+<tr class="separator:aec6b178ed04326e0babcd0d1d6490837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7abce5575c91aec39e038c037ae0a37"><td class="memItemLeft" align="right" valign="top"><a id="aa7abce5575c91aec39e038c037ae0a37"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_request.html#aa7abce5575c91aec39e038c037ae0a37">getFrameDataLength</a> ()</td></tr>
+<tr class="memdesc:aa7abce5575c91aec39e038c037ae0a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает полную длину поля данных API-фрейма. <br /></td></tr>
+<tr class="separator:aa7abce5575c91aec39e038c037ae0a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_payload_request"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_payload_request')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_payload_request.html">PayloadRequest</a></td></tr>
+<tr class="memitem:a22cc9fd971a1334346560689d7d8c8d5 inherit pub_methods_class_payload_request"><td class="memItemLeft" align="right" valign="top"><a id="a22cc9fd971a1334346560689d7d8c8d5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PayloadRequest</b> (uint8_t apiId, uint8_t frameId, uint8_t *payload, uint8_t payloadLength)</td></tr>
+<tr class="separator:a22cc9fd971a1334346560689d7d8c8d5 inherit pub_methods_class_payload_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2d5757fefda70dfd0c567b3dd0ba39 inherit pub_methods_class_payload_request"><td class="memItemLeft" align="right" valign="top"><a id="a1e2d5757fefda70dfd0c567b3dd0ba39"></a>
+uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_payload_request.html#a1e2d5757fefda70dfd0c567b3dd0ba39">getPayload</a> ()</td></tr>
+<tr class="memdesc:a1e2d5757fefda70dfd0c567b3dd0ba39 inherit pub_methods_class_payload_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает указатель на поле данных. <br /></td></tr>
+<tr class="separator:a1e2d5757fefda70dfd0c567b3dd0ba39 inherit pub_methods_class_payload_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9abc1f496a1c457f796207aa8a7567d inherit pub_methods_class_payload_request"><td class="memItemLeft" align="right" valign="top"><a id="aa9abc1f496a1c457f796207aa8a7567d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_payload_request.html#aa9abc1f496a1c457f796207aa8a7567d">setPayload</a> (uint8_t *payloadPtr)</td></tr>
+<tr class="memdesc:aa9abc1f496a1c457f796207aa8a7567d inherit pub_methods_class_payload_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает указатель на поле данных. <br /></td></tr>
+<tr class="separator:aa9abc1f496a1c457f796207aa8a7567d inherit pub_methods_class_payload_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a652f6963154003cd6e17cbcee990376a inherit pub_methods_class_payload_request"><td class="memItemLeft" align="right" valign="top"><a id="a652f6963154003cd6e17cbcee990376a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_payload_request.html#a652f6963154003cd6e17cbcee990376a">setPayload</a> (uint8_t *payloadPtr, uint8_t payloadLength)</td></tr>
+<tr class="memdesc:a652f6963154003cd6e17cbcee990376a inherit pub_methods_class_payload_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уставливает инлайном одновременно указатель на поле данных и число байт из него, начиная с первого, которое требуется поместить в передаваемое сообщение. <br /></td></tr>
+<tr class="separator:a652f6963154003cd6e17cbcee990376a inherit pub_methods_class_payload_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb718d069f05611623833437c99893a4 inherit pub_methods_class_payload_request"><td class="memItemLeft" align="right" valign="top"><a id="afb718d069f05611623833437c99893a4"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_payload_request.html#afb718d069f05611623833437c99893a4">getPayloadLength</a> ()</td></tr>
+<tr class="memdesc:afb718d069f05611623833437c99893a4 inherit pub_methods_class_payload_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает установленную длину поля данных. <br /></td></tr>
+<tr class="separator:afb718d069f05611623833437c99893a4 inherit pub_methods_class_payload_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e86a663ab6299afaa1cf21ad7c2c5c1 inherit pub_methods_class_payload_request"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_payload_request.html#a6e86a663ab6299afaa1cf21ad7c2c5c1">setPayloadLength</a> (uint8_t payloadLength)</td></tr>
+<tr class="memdesc:a6e86a663ab6299afaa1cf21ad7c2c5c1 inherit pub_methods_class_payload_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает число байт, которое надо поместить в поле данных отправляемого пакета.  <a href="class_payload_request.html#a6e86a663ab6299afaa1cf21ad7c2c5c1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6e86a663ab6299afaa1cf21ad7c2c5c1 inherit pub_methods_class_payload_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_m_bee_request"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_m_bee_request')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_m_bee_request.html">MBeeRequest</a></td></tr>
+<tr class="memitem:a8e54cf862e13a917b8f12b9b7c6fc905 inherit pub_methods_class_m_bee_request"><td class="memItemLeft" align="right" valign="top"><a id="a8e54cf862e13a917b8f12b9b7c6fc905"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#a8e54cf862e13a917b8f12b9b7c6fc905">MBeeRequest</a> (uint8_t apiId, uint8_t frameId)</td></tr>
+<tr class="memdesc:a8e54cf862e13a917b8f12b9b7c6fc905 inherit pub_methods_class_m_bee_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор, создающий фрейм с заданным API ID и идентификатором. <br /></td></tr>
+<tr class="separator:a8e54cf862e13a917b8f12b9b7c6fc905 inherit pub_methods_class_m_bee_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa67167caa74a13813381ebf59191be1c inherit pub_methods_class_m_bee_request"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#aa67167caa74a13813381ebf59191be1c">setFrameId</a> (uint8_t frameId)</td></tr>
+<tr class="memdesc:aa67167caa74a13813381ebf59191be1c inherit pub_methods_class_m_bee_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает frame id.  <a href="class_m_bee_request.html#aa67167caa74a13813381ebf59191be1c">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa67167caa74a13813381ebf59191be1c inherit pub_methods_class_m_bee_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4d9dd49cbbb57c10f17c851429f93c inherit pub_methods_class_m_bee_request"><td class="memItemLeft" align="right" valign="top"><a id="afc4d9dd49cbbb57c10f17c851429f93c"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#afc4d9dd49cbbb57c10f17c851429f93c">getFrameId</a> ()</td></tr>
+<tr class="memdesc:afc4d9dd49cbbb57c10f17c851429f93c inherit pub_methods_class_m_bee_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает frame id. <br /></td></tr>
+<tr class="separator:afc4d9dd49cbbb57c10f17c851429f93c inherit pub_methods_class_m_bee_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93b96db4cacb2afb6e10003e543180a inherit pub_methods_class_m_bee_request"><td class="memItemLeft" align="right" valign="top"><a id="ad93b96db4cacb2afb6e10003e543180a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#ad93b96db4cacb2afb6e10003e543180a">setApiId</a> (uint8_t apiId)</td></tr>
+<tr class="memdesc:ad93b96db4cacb2afb6e10003e543180a inherit pub_methods_class_m_bee_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает тип API-фрейма. <br /></td></tr>
+<tr class="separator:ad93b96db4cacb2afb6e10003e543180a inherit pub_methods_class_m_bee_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c297e403a78c169bd68f64e9f07fda7 inherit pub_methods_class_m_bee_request"><td class="memItemLeft" align="right" valign="top"><a id="a2c297e403a78c169bd68f64e9f07fda7"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_bee_request.html#a2c297e403a78c169bd68f64e9f07fda7">getApiId</a> ()</td></tr>
+<tr class="memdesc:a2c297e403a78c169bd68f64e9f07fda7 inherit pub_methods_class_m_bee_request"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает тип API-фрейма. <br /></td></tr>
+<tr class="separator:a2c297e403a78c169bd68f64e9f07fda7 inherit pub_methods_class_m_bee_request"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для пакета,предназначенного для передачи удаленному модему неструктурированных данных, которые будут отправлены им на последовательный интерфейс UART. </p>
+<p>Режим отправки на UART(пакетный или прозрачный) зависит от настроек удаленного модуля. </p>
+<p>Режимы передачи пакета и получения подтверждений могут определяться байтом option. Для этого параметр _optionEnable должен быть установлен в true (режим "по умолчанию"). Если параметр _optionEnable=false, то режимы отправки определяются параметром DM(Device Mode). Максимальная допустимая длина поля данных пакета зависит от выбранного режима передачи:</p><ol type="1">
+<li>Если _optionEnable=false, то FrameDataLength &lt;= 40.</li>
+<li>Если _optionEnable=true, то FrameDataLength &lt;= 39.</li>
+<li>Если требуется шифрование поля данных(_encryption = true или DEVICE_MODE_ENCRYPTION_BIT = 1), то FrameDataLength &lt;= 32 независимо от установки _optionEnable. </li>
+</ol>
+<p>ВНИМАНИЕ! Каких-либо проверок на превышение допустимой длины поля данных не производится. Если длина поля данных превышает максимально допустимую для данного режима, то в поле данных помещается макисмально возможное число. При этом все "лишние" отбрасываются и никакие уведомлений об этом в ответном пакете не формируются. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8h_source.html">SerialStar.h</a> строка <a class="el" href="_serial_star_8h_source.html#l00883">883</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a6010aeee295ce7d90a77da1817806504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6010aeee295ce7d90a77da1817806504">&#9670;&nbsp;</a></span>TxRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TxRequest::TxRequest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор "по умолчанию". </p>
+<p>Перед отправкой пакета, необходимо как минимум установить указатель на буфер с исходными данными, указать количество отправлямых байт, начиная с первого, и адрес получателя. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a> строка <a class="el" href="_serial_star_8cpp_source.html#l00814">814</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>includes/<a class="el" href="_serial_star_8h_source.html">SerialStar.h</a></li>
+<li><a class="el" href="_serial_star_8cpp_source.html">SerialStar.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
