@@ -1,10 +1,8 @@
 #include "GpioExpander.h"
 #include <Wire.h>
-#include <Arduino.h>
 
 void GpioExpander::writeCmdPin(IOcommand command, uint8_t pin, bool sendStop)
 {
-    delay(0);
     Wire.beginTransmission( _i2caddress );
     Wire.write((uint8_t)command);
     Wire.write(pin);
@@ -13,7 +11,6 @@ void GpioExpander::writeCmdPin(IOcommand command, uint8_t pin, bool sendStop)
 
 void GpioExpander::writeCmdPin16Val(IOcommand command, uint8_t pin, uint16_t value, bool sendStop)
 {
-    delay(0);
     Wire.beginTransmission( _i2caddress );
     Wire.write((uint8_t)command);
     Wire.write(pin);
@@ -28,7 +25,6 @@ void GpioExpander::writeCmdPin16Val(IOcommand command, uint8_t pin, uint16_t val
 
 void GpioExpander::writeCmd16BitData(IOcommand command, uint16_t data)
 {
-    delay(0);
     Wire.beginTransmission( _i2caddress ); // Address set on class instantiation
     Wire.write((uint8_t)command);
     uint8_t temp;
@@ -41,7 +37,6 @@ void GpioExpander::writeCmd16BitData(IOcommand command, uint16_t data)
 
 void GpioExpander::writeCmd8BitData(IOcommand command, uint8_t data)
 {
-    delay(0);
     Wire.beginTransmission( _i2caddress ); // Address set on class instantiation
     Wire.write((uint8_t)command);
     Wire.write(data); // Data/setting to be sent to device
@@ -50,7 +45,6 @@ void GpioExpander::writeCmd8BitData(IOcommand command, uint8_t data)
 
 void GpioExpander::writeCmd(IOcommand command, bool sendStop)
 {
-    delay(0);
     Wire.beginTransmission( _i2caddress );
     Wire.write((uint8_t)command);
     Wire.endTransmission(sendStop);
@@ -58,14 +52,12 @@ void GpioExpander::writeCmd(IOcommand command, bool sendStop)
 
 int GpioExpander::read16Bit()
 {
-    delay(0);
     int result = -1;
     uint8_t byteCount = 2;
     Wire.requestFrom(_i2caddress, byteCount);
     uint16_t counter = 0xff;
     while (Wire.available() < byteCount)
     {
-        delay(0);
         if (!(--counter))
             return result;
     }
@@ -77,14 +69,12 @@ int GpioExpander::read16Bit()
 
 uint32_t GpioExpander::read32bit()
 {
-    delay(0);
     uint32_t result = 0xffffffff; // https://www.youtube.com/watch?v=y73hyMP1a-E
     uint8_t byteCount = 4;
     Wire.requestFrom(_i2caddress, byteCount);
     uint16_t counter = 0xff;
     while (Wire.available() < byteCount)
     {
-        delay(0);
         if (!(--counter))
             return result;
     }
@@ -132,18 +122,24 @@ int GpioExpander::digitalRead(int pin)
     return result;
 }
 
+void GpioExpander::pinModePort(uint16_t value, uint8_t mode)
+{
+    if (mode == INPUT) {
+        writeCmd16BitData(PORT_MODE_INPUT, value);
+    } else if (mode == OUTPUT) {
+        writeCmd16BitData(PORT_MODE_OUTPUT, value);
+    } else if (mode == INPUT_PULLUP) {
+        writeCmd16BitData(PORT_MODE_PULLUP, value);
+    } else if (mode == INPUT_PULLDOWN) {
+        writeCmd16BitData(PORT_MODE_PULLDOWN, value);
+    }
+
+}
+
 void GpioExpander::pinMode(int pin, uint8_t mode)
 {
     uint16_t sendData = 1<<pin;
-    if (mode == INPUT) {
-        writeCmd16BitData(PORT_MODE_INPUT, sendData);
-    } else if (mode == OUTPUT) {
-        writeCmd16BitData(PORT_MODE_OUTPUT, sendData);
-    } else if (mode == INPUT_PULLUP) {
-        writeCmd16BitData(PORT_MODE_PULLUP, sendData);
-    } else if (mode == INPUT_PULLDOWN) {
-        writeCmd16BitData(PORT_MODE_PULLDOWN, sendData);
-    }
+    pinModePort(sendData, mode);
 
 }
 

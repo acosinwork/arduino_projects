@@ -12,15 +12,28 @@
 #include <GpioExpander.h>
 #include <OSCMessage.h>
 
+
+#include <Ticker.h>
+Ticker ticker;
+
+volatile bool wasTick = false;
+
+void tick()
+{
+  wasTick = true;
+}
+
+
 GpioExpander adio(42);
 
 int lastVal = 0;
+int i;
 
 unsigned int localPort = 3003;      // local port to listen on
 
 char packetBuffer[255]; //buffer to hold incoming packet
 char  ReplyBuffer[] = "acknowledged";       // a string to send back
-
+IPAddress outIp(192, 168, 88, 112);
 WiFiUDP Udp;
 void setup() {
   // put your setup code here, to run once:
@@ -55,51 +68,60 @@ void setup() {
   // Udp.begin(localPort);
 
   Wire.begin(0, 2);
+  ticker.attach_ms(50, tick);
 
+  Udp.beginPacket(outIp, localPort);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   delay(0);
-  int aread = adio.analogRead(0);
-  delay(0);
-  //  Serial.println(aread);
-  //  Serial.println(WiFi.localIP());
-  /*
-    int packetSize = Udp.parsePacket();
-    if (packetSize) {
-      Serial.print("Received packet of size ");
-      Serial.println(packetSize);
-      Serial.print("From ");
-      IPAddress remoteIp = Udp.remoteIP();
-      Serial.print(remoteIp);
-      Serial.print(", port ");
-      Serial.println(Udp.remotePort());
 
-      // read the packet into packetBufffer
-      int len = Udp.read(packetBuffer, 255);
-      if (len > 0) {
-        packetBuffer[len] = 0;
-      }
-      Serial.println("Contents:");
-      Serial.println(packetBuffer);
+  if (wasTick) {
 
-      // send a reply, to the IP address and port that sent us the packet we received
-      Udp.beginPacket(Udp.remoteIP(), Udp.remotePort());
-      Udp.write(ReplyBuffer);
-      Udp.endPacket();
-    }
-  */
-  if (lastVal != aread) {
+    /*    int aread = (adio.analogRead(0)) >> 1;
+        delay(0);
+        //  Serial.println(aread);
+        //  Serial.println(WiFi.localIP());
+        /*
+          int packetSize = Udp.parsePacket();
+          if (packetSize) {
+            Serial.print("Received packet of size ");
+            Serial.println(packetSize);
+            Serial.print("From ");
+            IPAddress remoteIp = Udp.remoteIP();
+            Serial.print(remoteIp);
+            Serial.print(", port ");
+            Serial.println(Udp.remotePort());
+
+            // read the packet into packetBufffer
+            int len = Udp.read(packetBuffer, 255);
+            if (len > 0) {
+              packetBuffer[len] = 0;
+            }
+            Serial.println("Contents:");
+            Serial.println(packetBuffer);
+
+            // send a reply, to the IP address and port that sent us the packet we received
+            Udp.beginPacket(Udp.remoteIP(), Udp.remotePort());
+            Udp.write(ReplyBuffer);
+            Udp.endPacket();
+          }
+    */
+    //   if (lastVal != aread) {
     OSCMessage msg("/1/fader1");
-    msg.add((float)(aread / 4095.0));
-    IPAddress outIp(192, 168, 88, 112);
-    Udp.beginPacket(outIp, localPort);
+    msg.add((float)(0.5 + sin(++i / PI) * 0.5)); // / 2047.0));
+
+
     msg.send(Udp); // send the bytes to the SLIP stream
-    Udp.endPacket(); // mark the end of the OSC Packet
+          Udp.endPacket(); // mark the end of the OSC Packet
     msg.empty(); // free space occupied by message
-    lastVal = aread;
+    //   lastVal = aread;
+    //    }
+    wasTick = false;
   }
-  delay(15);
+  //  delay(15);
 
 }
+
+
